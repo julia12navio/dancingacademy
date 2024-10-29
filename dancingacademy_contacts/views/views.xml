@@ -1,5 +1,46 @@
 <odoo>
 
+<record id="dancingacademy_all_members_views" model="ir.ui.view">
+            <field name="name">dancingacademy.all.members.views</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_type']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+                <!-- <xpath expr="//field[@name='company_type']" position="after">
+                    <field name="type_member" options="{'horizontal': true}" widget="radio"/>
+                </xpath> -->
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+                <xpath expr="//div[@class='o_address_format']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='vat']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='website']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='title']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='active_lang_count']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lang']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='category_id']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+            </field>
+    </record>
+
     <record id="contacts.menu_contacts" model="ir.ui.menu">
         <field name="name">Members</field>
     </record>
@@ -8,70 +49,127 @@
         <field name="name">All Members</field>
     </record>
 
-    <!-- <menuitem name="Director" id="dancingacademy_contacts_director" parent="contacts.menu_contacts"/>
-
-    <menuitem name="Teachers" id="dancingacademy_contacts_teachers" parent="contacts.menu_contacts"/>
-
-    <menuitem name="Dancers" id="dancingacademy_contacts_dancers" parent="contacts.menu_contacts"/> -->
-
 
 </odoo>
     
+<!-- <record id="purchase_initial_order_view" model="ir.ui.view">
+        <field name="name">purchase.initial.order</field>
+        <field name="model">purchase.order</field>
+        <field name="type">form</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="999" />
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='state']" position="attributes">
+                <attribute name="attrs">{'invisible': 1}</attribute>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="before">
+                <field
+                    name="state"
+                    widget="statusbar"
+                    statusbar_visible="draft,ipo_confirmed,ipo_completed"
+                    statusbar_colors='{"ipo_confirmed":"blue"}'
+                />
+</xpath> -->
+<!-- <div name="button_box" position="inside">
+                    <button
+                    class="oe_stat_button"
+                    string="Associated Orders"
+                    icon="fa-usd"
+                    type="object"
+                    name="show_associated_orders"
+                    attrs="{'invisible': [('initial_order', '=', False)]}"
+                >
+                        <field
+                        string="Associated Orders"
+                        name="associated_orders_count"
+                        widget="statinfo"
+                    />
+                        <field name="allow_import_pca" invisible="1" />
+                    </button>
+                </div>
+                <button name="button_cancel" position="before">
+                    <button
+                    name="%(purchase_associated_order_wizard_action)d"
+                    string="Create associated order"
+                    type="action"
+                    attrs="{'invisible': ['|',('initial_order', '=', False),('state','!=','ipo_confirmed')]}"
+                />
+                    <button
+                    name='action_complete_ipo'
+                    string="Complete IPO"
+                    states="ipo_confirmed"
+                    class="oe_highlight"
+                    groups="base.group_user"
+                    type="object"
+                />
+                    <button
+                    name="action_cancel"
+                    string="Cancel IPO"
+                    states="ipo_confirmed"
+                    type="object"
+                    groups="base.group_user"
+                />
+                    <button
+                    name="return_to_pci_confirmed"
+                    string="Return To IPO Confirmed"
+                    states="ipo_completed"
+                    class="oe_highlight"
+                    type="object"
+                    groups="purchase_initial_order.change_pci_status_access_group"
+                />
+                </button>
+                <field name="order_line" position="after">
+                    <field name="initial_order" invisible="1" />
+                    <field name="initial_order_id" invisible="1" />
+                </field>
+                <xpath expr="//field[@name='notes']/.." position="after">
+                    <group
+                    class="oe_subtotal_footer oe_right"
+                    style="border-top: none;text-align: right;"
+                    colspan="2"
+                    name="apo_purchase_total"
+                    string="Associated Order"
+                    attrs="{'invisible': [('initial_order', '=', False)]}"
+                >
+                        <field
+                        name="apo_tax_totals"
+                        widget="account-tax-totals-field"
+                        nolabel="1"
+                        colspan="2"
+                        readonly="1"
+                    />
+                    </group>
+                </xpath>
+                <xpath expr="//field[@name='tax_totals']/.." position="attributes">
+                    <attribute name="string">Initial Order</attribute>
+                    <attribute
+                    name="style"
+                >border-top: none;text-align: right;</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']" position="attributes">
+                    <attribute
+                    name="attrs"
+                >{'readonly': [('state', 'in', ('ipo_completed','done','cancel'))]}</attribute>
+                </xpath>
+                <xpath
+                expr="//field[@name='order_line']//tree/field[@name='product_qty']"
+                position="after"
+            >
+                    <field name="product_ordered_qty" readonly="True" />
+                    <field name="product_confirmed_qty" readonly="True" />
+                    <field name="product_remaining_qty" readonly="True" />
+                    <field name="product_canceled_qty" readonly="True" />
 
-
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="dancingacademy_contacts.list">
-      <field name="name">dancingacademy_contacts list</field>
-      <field name="model">dancingacademy_contacts.dancingacademy_contacts</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
--->
-
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="dancingacademy_contacts.action_window">
-      <field name="name">dancingacademy_contacts window</field>
-      <field name="res_model">dancingacademy_contacts.dancingacademy_contacts</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="dancingacademy_contacts.action_server">
-      <field name="name">dancingacademy_contacts server</field>
-      <field name="model_id" ref="model_dancingacademy_contacts_dancingacademy_contacts"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
-    <!-- Top menu item -->
-<!--
-    <menuitem name="dancingacademy_contacts" id="dancingacademy_contacts.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="dancingacademy_contacts.menu_1" parent="dancingacademy_contacts.menu_root"/>
-    <menuitem name="Menu 2" id="dancingacademy_contacts.menu_2" parent="dancingacademy_contacts.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="dancingacademy_contacts.menu_1_list" parent="dancingacademy_contacts.menu_1"
-              action="dancingacademy_contacts.action_window"/>
-    <menuitem name="Server to list" id="dancingacademy_contacts" parent="dancingacademy_contacts.menu_2"
-              action="dancingacademy_contacts.action_server"/>
--->
+                </xpath>
+                <xpath
+                expr="//field[@name='order_line']//form//field[@name='product_qty']/.."
+                position="after"
+            >
+                    <field name="product_ordered_qty" />
+                    <field name="product_confirmed_qty" />
+                    <field name="product_remaining_qty" />
+                    <field name="product_canceled_qty" />
+                </xpath>
+            </field>
+        </record> -->

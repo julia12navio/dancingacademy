@@ -13,4 +13,4 @@ class Members(models.Model):
 
         classes = fields.Text()
 
-        Biography
+        teachers = fields.Many2many("teachers")
