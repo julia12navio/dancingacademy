@@ -1,0 +1,63 @@
+<odoo>
+    <!-- Acciones para los menús -->
+    <record id="action_academy_all_members" model="ir.actions.act_window">
+        <field name="name">Todos los Miembros</field>
+        <field name="res_model">academy.member</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <record id="action_academy_directivo_members" model="ir.actions.act_window">
+        <field name="name">Equipo Directivo</field>
+        <field name="res_model">academy.member</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('member_type', '=', 'directivo')]</field>
+    </record>
+
+    <record id="action_academy_profesor_members" model="ir.actions.act_window">
+        <field name="name">Profesores</field>
+        <field name="res_model">academy.member</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('member_type', '=', 'profesor')]</field>
+    </record>
+
+    <record id="action_academy_bailarin_members" model="ir.actions.act_window">
+        <field name="name">Bailarines</field>
+        <field name="res_model">academy.member</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('member_type', '=', 'bailarin')]</field>
+    </record>
+
+    <!-- Vista de lista -->
+    <record id="view_academy_member_tree" model="ir.ui.view">
+        <field name="name">academy.member.tree</field>
+        <field name="model">academy.member</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="member_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario -->
+    <record id="view_academy_member_form" model="ir.ui.view">
+        <field name="name">academy.member.form</field>
+        <field name="model">academy.member</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="member_type"/>
+                        <field name="user_id"/>
+                    </group>
+                    <group>
+                        <field name="student_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="professor_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

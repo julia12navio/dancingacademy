@@ -1,0 +1,46 @@
+<odoo>
+    <!-- Vista de árbol para el modelo de clase -->
+    <record id="view_class_tree" model="ir.ui.view">
+        <field name="name">class.tree</field>
+        <field name="model">dancingacademy.class</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>
+                <field name="profesor"/>
+                <field name="precio"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para el modelo de clase -->
+    <record id="view_class_form" model="ir.ui.view">
+        <field name="name">class.form</field>
+        <field name="model">dancingacademy.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="profesor"/>
+                        <field name="alumnos" widget="many2many_tags"/>
+                        <field name="videos"/>
+                        <field name="precio"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para abrir el modelo de clases -->
+    <record id="action_dancingacademy_class" model="ir.actions.act_window">
+        <field name="name">Classes</field>
+        <field name="res_model">dancingacademy.class</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú raíz para la academia de baile -->
+    <menuitem id="menu_dancingacademy_root" name="Dancing Academy" sequence="1"/>
+
+    <!-- Submenú para gestionar las clases -->
+    <menuitem id="menu_dancingacademy_class" name="Classes" parent="menu_dancingacademy_root" action="action_dancingacademy_class" sequence="2"/>
+</odoo>

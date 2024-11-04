@@ -1,0 +1,45 @@
+<odoo>
+    <record id="view_member_management_team_kanban" model="ir.ui.view">
+        <field name="name">member.management.team.kanban</field>
+        <field name="model">member.management.team</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <field name="image" widget="image" class="oe_kanban_avatar"/>
+                                <strong><field name="name"/></strong>
+                                <div>Management Team</div>
+                            </div>
+                        </div>
+
+                    <!-- <t t-name="kanban-box">
+                        <div class="o_kanban_record">
+                            <field name="image" widget="image" class="oe_avatar" />
+                            <field name="name" />
+                            <field name="last_name" />
+                        </div> -->
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_member_management_team_form" model="ir.ui.view">
+        <field name="name">member.management.team.form</field>
+        <field name="model">member.management.team</field>
+        <field name="arch" type="xml">
+            <form string="Equipo Directivo">
+                <group>
+                    <field name="name" />
+                    <field name="user_id" string="Usuario"/>
+                    <field name="last_name" />
+                    <field name="phone" />
+                    <field name="location" />
+                    <field name="image" widget="image" />
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

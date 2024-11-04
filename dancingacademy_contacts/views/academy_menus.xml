@@ -1,0 +1,8 @@
+<odoo>
+    <menuitem id="menu_academy_root" name="Academia" sequence="10"/>
+    
+    <menuitem id="menu_academy_all" name="Todos" parent="menu_academy_root" action="action_academy_all_members"/>
+    <menuitem id="menu_academy_directivo" name="Equipo Directivo" parent="menu_academy_root" action="action_academy_directivo_members"/>
+    <menuitem id="menu_academy_profesores" name="Profesores" parent="menu_academy_root" action="action_academy_profesor_members"/>
+    <menuitem id="menu_academy_bailarines" name="Bailarines" parent="menu_academy_root" action="action_academy_bailarin_members"/>
+</odoo>

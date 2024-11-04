@@ -24,9 +24,10 @@
 
     # always loaded
     'data': [
+        # 'security/academy_security.xml',
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        # 'views/academy_menus.xml',
+        # 'views/academy_member_views.xml',
     ],
     'assets': {
         'web.assets_backend': [

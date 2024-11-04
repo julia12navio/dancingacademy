@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="dancingacademy_classes.list">
+      <field name="name">dancingacademy_classes list</field>
+      <field name="model">dancingacademy_classes.dancingacademy_classes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="dancingacademy_classes.action_window">
+      <field name="name">dancingacademy_classes window</field>
+      <field name="res_model">dancingacademy_classes.dancingacademy_classes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="dancingacademy_classes.action_server">
+      <field name="name">dancingacademy_classes server</field>
+      <field name="model_id" ref="model_dancingacademy_classes_dancingacademy_classes"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="dancingacademy_classes" id="dancingacademy_classes.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="dancingacademy_classes.menu_1" parent="dancingacademy_classes.menu_root"/>
+    <menuitem name="Menu 2" id="dancingacademy_classes.menu_2" parent="dancingacademy_classes.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="dancingacademy_classes.menu_1_list" parent="dancingacademy_classes.menu_1"
+              action="dancingacademy_classes.action_window"/>
+    <menuitem name="Server to list" id="dancingacademy_classes" parent="dancingacademy_classes.menu_2"
+              action="dancingacademy_classes.action_server"/>
+-->
+  </data>
+</odoo>

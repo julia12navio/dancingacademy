@@ -1,0 +1,18 @@
+<odoo>
+    <!-- Definición del grupo de Dancer -->
+    <record id="dancingacademy_members.group_academy_dancer" model="res.groups">
+        <field name="name">Dancer</field>
+    </record>
+
+    <!-- Definición del grupo de Teacher, con el grupo Dancer como implícito -->
+    <record id="dancingacademy_members.group_academy_teacher" model="res.groups">
+        <field name="name">Teacher</field>
+        <field name="implied_ids" eval="[(4, ref('dancingacademy_members.group_academy_dancer'))]"/>
+    </record>
+
+    <!-- Definición del grupo de Equipo directivo, con el grupo Teacher como implícito -->
+    <record id="dancingacademy_members.group_academy_management_team" model="res.groups">
+        <field name="name">Management Team</field>
+        <field name="implied_ids" eval="[(4, ref('dancingacademy_members.group_academy_teacher'))]"/>
+    </record>
+</odoo>

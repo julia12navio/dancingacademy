@@ -1,0 +1,48 @@
+<odoo>
+    <record id="view_member_teacher_kanban" model="ir.ui.view">
+        <field name="name">member.teacher.kanban</field>
+        <field name="model">member.teacher</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <field name="image" widget="image" class="oe_kanban_avatar"/>
+                                <strong><field name="name"/><br/><field name="last_name" /></strong>
+                                <div>Teachers</div>
+                            </div>
+                        </div>
+
+                    <!-- <t t-name="kanban-box">
+                        <div class="o_kanban_record">
+                            <field name="image" widget="image" class="oe_avatar" />
+                            <field name="name" />
+                            <field name="last_name" />
+                        </div> -->
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_member_teacher_form" model="ir.ui.view">
+        <field name="name">member.teacher.form</field>
+        <field name="model">member.teacher</field>
+        <field name="arch" type="xml">
+            <form string="Teacher">
+                <group>
+                    <field name="name" string="Nombre"/>
+                    <field name="last_name" string="Apellido"/>
+                    <field name="user_id" string="Usuario"/>
+                    <!-- <field name="class_ids" string="Clases"/> -->
+                    <field name="student_ids" string="Alumnos" widget="many2many_tags"/>
+                    <field name="biography" string="Biografía"/>
+                    <field name="videos" widget="binary" string="Videos"/>
+                    <button name="open_payment_window" string="Pay Teacher" type="object" groups="dancingacademy_members.group_academy_directivo"/>
+                    <field name="image" widget="image" string="Foto"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

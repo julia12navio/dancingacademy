@@ -1,0 +1,107 @@
+/*Menu*/
+.o_main_navbar {
+    background-color: pink !important;
+    border-color: pink;
+}
+
+/*Menu nombre*/
+.o_menu_brand {
+    color: black !important; 
+}
+
+/*Menu icono apps */
+.o-dropdown * {
+    color: black !important;  
+}
+
+/*Menu Usuario*/
+.o_user_menu .dropdown-toggle {
+    background-color: pink !important;  /* Cambia el fondo del usuario a rosa */
+    color: black !important;  /* Cambia el color del texto a blanco */
+    border-radius: 50% !important;  /* Hace que el fondo sea redondeado */
+}
+
+/*Menu submenus*/
+.o_menu_sections .dropdown-item, .o_menu_sections .dropdown-menu a {
+    color: black !important;
+}
+
+/*Menu iconos*/
+.fa{
+    color:black;
+}
+
+/*Botones primarios*/
+.btn-primary {
+    background-color: pink !important;  /* Cambia el color de fondo del botón a rosa */
+    border-color: pink !important;  /* Cambia el color del borde del botón a rosa */
+    color:black;
+}
+
+/*Botones sin relleno*/
+.btn-outline-primary {
+    color: pink;
+    border-color: pink;
+}
+
+/*Botones sin relleno al pasar por encima*/
+.btn-outline-primary:hover {
+    color: #FFFFFF;
+    background-color:pink;
+    border-color: pink;
+}
+
+/*Botones secundarios*/
+.btn-secondary {
+    color: black !important;  /* Cambia el color del texto a blanco (opcional) */
+    background-color: pink;
+}
+
+/*Botones con links*/
+.btn-link{
+    color: pink;
+}
+
+/*Botones con texto*/
+.text-odoo {
+    color: pink !important;
+}
+
+/*Botones odoo*/
+.btn-odoo{
+    color: black !important;  /* Cambia el color del texto a blanco (opcional) */
+    background-color: pink;
+}
+
+/*Botones radio seleccionados*/
+.form-check-input:checked {
+    border-color:black;
+    background-color: pink;
+    color:pink;
+}
+
+/*Titulo de pagina*/
+a{
+    color:pink;
+}
+
+/*Icono filtrar por*/
+.o_facet .fa, .o_searchview .fa, .o_cp_buttons .fa {
+    background-color: pink !important;  /*Cambiar el color de los íconos a rosa */
+    color: black !important;
+}
+
+/*Icono agrupar por */
+.o_searchview_facet .oi-group{
+    background-color: pink !important;  /*Cambiar el color de los íconos a rosa */
+    color: black !important;
+}
+
+
+
+
+
+
+
+
+

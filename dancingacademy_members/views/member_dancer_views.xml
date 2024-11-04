@@ -1,0 +1,46 @@
+<odoo>
+    <record id="view_member_dancer_kanban" model="ir.ui.view">
+        <field name="name">member.dancer.kanban</field>
+        <field name="model">member.dancer</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <field name="image" widget="image" class="oe_kanban_avatar"/>
+                                <strong><field name="name"/><br/><field name="last_name" /></strong>
+                                <div>Dancer</div>
+                            </div>
+                        </div>
+
+                    <!-- <t t-name="kanban-box">
+                        <div class="o_kanban_record">
+                            <field name="image" widget="image" class="oe_avatar" />
+                            <field name="name" />
+                            <field name="last_name" />
+                        </div> -->
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_member_dancer_form" model="ir.ui.view">
+        <field name="name">.member.dancer.form</field>
+        <field name="model">member.dancer</field>
+        <field name="arch" type="xml">
+            <form string="Dancers">
+                <group>
+                    <field name="name" />
+                    <field name="last_name" />
+                    <field name="user_id" string="Usuario"/>
+                    <!-- <field name="class_ids" /> -->
+                    <field name="teacher_ids" widget="many2many_tags"/>
+                    <field name="comments" />
+                    <field name="image" widget="image" />
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

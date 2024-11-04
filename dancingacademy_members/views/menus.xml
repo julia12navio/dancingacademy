@@ -1,0 +1,33 @@
+<odoo>
+    <!-- Menú principal Academia -->
+    <menuitem id="academy_members_menu" name="Academy Members" sequence="1"/>
+
+    <!-- Acción para ver los miembros de Equipo directivo -->
+    <record id="dancingacademy_members.action_view_management_team" model="ir.actions.act_window">
+        <field name="name">Management Team</field>
+        <field name="res_model">member.management.team</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="domain">[]</field>
+    </record>
+    <menuitem id="academy_management_team_menu" name="Management Team" parent="academy_members_menu" sequence="3" action="dancingacademy_members.action_view_management_team"/>
+
+    <!-- Acción para ver los Profesores -->
+    <record id="dancingacademy_members.action_view_teacher" model="ir.actions.act_window">
+        <field name="name">Teachers</field>
+        <field name="res_model">member.teacher</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="domain">[]</field>
+    </record>
+    <menuitem id="academy_teachers_menu" name="Teachers" parent="academy_members_menu" sequence="4" action="dancingacademy_members.action_view_teacher"/>
+
+    <!-- Acción para ver los Alumnos -->
+    <record id="dancingacademy_members.action_view_dancer" model="ir.actions.act_window">
+        <field name="name">Dancers</field>
+        <field name="res_model">member.dancer</field>
+        <field name="view_mode">kanban,form</field>
+        <field name="domain">[]</field>
+    </record>
+    <menuitem id="academy_dancer_menu" name="Dancers" parent="academy_members_menu" sequence="5" action="dancingacademy_members.action_view_dancer"/>
+</odoo>
+
+

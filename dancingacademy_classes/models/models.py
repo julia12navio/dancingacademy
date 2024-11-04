@@ -3,9 +3,9 @@
 # from odoo import models, fields, api
 
 
-# class dancingacademy_module_test(models.Model):
-#     _name = 'dancingacademy_module_test.dancingacademy_module_test'
-#     _description = 'dancingacademy_module_test.dancingacademy_module_test'
+# class dancingacademy_classes(models.Model):
+#     _name = 'dancingacademy_classes.dancingacademy_classes'
+#     _description = 'dancingacademy_classes.dancingacademy_classes'
 
 #     name = fields.Char()
 #     value = fields.Integer()
