@@ -7,7 +7,7 @@ class MemberDancer(models.Model):
 
     name = fields.Char(required=True)
     last_name = fields.Char()
-    # class_ids = fields.Many2many('academy.class', string="Clases")
+    # class_ids = fields.Many2many('dancingacademy.class', string="Clases")
     teacher_ids = fields.Many2many('member.teacher', string="Teachers")
     comments = fields.Text(string="Comments")
     image = fields.Binary(string="photos")

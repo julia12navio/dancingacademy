@@ -31,14 +31,16 @@
         <field name="model">member.management.team</field>
         <field name="arch" type="xml">
             <form string="Equipo Directivo">
-                <group>
-                    <field name="name" />
-                    <field name="user_id" string="Usuario"/>
-                    <field name="last_name" />
-                    <field name="phone" />
-                    <field name="location" />
-                    <field name="image" widget="image" />
-                </group>
+            <sheet>         
+                    <field name="image" widget="image" class="oe_avatar" />
+                    <h1><field name="name" /></h1>
+                    <group>          
+                        <field name="user_id" string="Usuario"/>
+                        <field name="last_name" />
+                        <field name="phone" />
+                        <field name="location" />
+                    </group>
+            </sheet>
             </form>
         </field>
     </record>

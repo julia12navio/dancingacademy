@@ -39,7 +39,7 @@
     </record>
 
     <!-- Menú raíz para la academia de baile -->
-    <menuitem id="menu_dancingacademy_root" name="Dancing Academy" sequence="1"/>
+    <menuitem id="menu_dancingacademy_root" name="Classes" sequence="1"/>
 
     <!-- Submenú para gestionar las clases -->
     <menuitem id="menu_dancingacademy_class" name="Classes" parent="menu_dancingacademy_root" action="action_dancingacademy_class" sequence="2"/>

@@ -82,7 +82,7 @@
 
 /*Titulo de pagina*/
 a{
-    color:pink;
+    color:pink !important;
 }
 
 /*Icono filtrar por*/

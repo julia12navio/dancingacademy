@@ -6,7 +6,7 @@ class MemberManagementTeam(models.Model):
 
     name = fields.Char()
     last_name = fields.Char()
-    image = fields.Binary(string='photo')
+    image = fields.Binary()
     phone = fields.Char()
     location = fields.Char()
     user_id = fields.Many2one('res.users', string="user", required=True, ondelete="cascade", help="User asociated with management team")
