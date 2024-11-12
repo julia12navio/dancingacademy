@@ -35,7 +35,7 @@
                     <field name="name" />
                     <field name="last_name" />
                     <field name="user_id" string="Usuario"/>
-                    <!-- <field name="class_ids" widget="many2many_tags"/> -->
+                    <field name="class_ids" widget="many2many_tags"/>
                     <field name="teacher_ids" widget="many2many_tags"/>
                     <field name="comments" />
                     <field name="image" widget="image" />
