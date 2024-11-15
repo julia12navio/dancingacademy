@@ -26,6 +26,7 @@
                         <field name="total_dancers"/>
                         <field name="videos"/>
                         <field name="price"/>
+                        <!-- <button name="create_paypal_order" type="object" string="Pagar con PayPal" class="btn-primary"/> -->
                     </group>
                 </sheet>
             </form>

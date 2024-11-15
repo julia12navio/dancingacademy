@@ -4,7 +4,8 @@
     'version': '1.0',
     'depends': ['base'],
     'data': [
-
+        'security/security_groups.xml',
+        'security/ir.model.access.csv',
     ],
     'assets': {
         'web.assets_backend': [
