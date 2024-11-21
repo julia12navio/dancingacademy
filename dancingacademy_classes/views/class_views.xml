@@ -17,21 +17,30 @@
         <field name="name">class.form</field>
         <field name="model">dancingacademy.class</field>
         <field name="arch" type="xml">
-            <form>
+             <form string="Dancing Academy Class">
                 <sheet>
                     <group>
                         <field name="name"/>
                         <field name="teacher_id"/>
                         <field name="dancer_ids" widget="many2many_tags"/>
                         <field name="total_dancers"/>
-                        <field name="videos"/>
                         <field name="price"/>
-                        <!-- <button name="create_paypal_order" type="object" string="Pagar con PayPal" class="btn-primary"/> -->
+                        <field name="youtube_playlist_url" string="YouTube Playlist URL"/>
+                        <button name="fetch_youtube_videos" type="object" string="Fetch Videos" class="oe_highlight"/>
                     </group>
+                    <field name="videos_list" invisible="1"/>
                 </sheet>
+                <div id="videoListContainer" data-videos='t-esc="record.videos_list | safe_json"'></div>
             </form>
         </field>
     </record>
+
+    <!-- Herencia para extender vistas base -->
+    <template id="video_list_template" inherit_id="dancingacademy_classes.view_class_form">
+        <xpath expr="//sheet" position="after">
+            <div id="videoListContainer" data-videos='t-esc="record.videos_list | safe_json"'></div>
+        </xpath>
+    </template>
 
     <!-- Acción para abrir el modelo de clases -->
     <record id="action_dancingacademy_class" model="ir.actions.act_window">
