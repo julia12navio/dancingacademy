@@ -17,7 +17,7 @@
         <field name="name">class.form</field>
         <field name="model">dancingacademy.class</field>
         <field name="arch" type="xml">
-             <form string="Dancing Academy Class">
+            <form string="Dancing Academy Class">
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -25,12 +25,23 @@
                         <field name="dancer_ids" widget="many2many_tags"/>
                         <field name="total_dancers"/>
                         <field name="price"/>
-                        <field name="youtube_playlist_url" string="YouTube Playlist URL"/>
-                        <button name="fetch_youtube_videos" type="object" string="Fetch Videos" class="oe_highlight"/>
+                        <field name="youtube_playlist_url"/>
                     </group>
-                    <field name="videos_list" invisible="1"/>
+                    <div>
+                        <button type="object" name="fetch_youtube_videos" class="oe_highlight" string="Fetch Videos"/>
+                    </div>
+                    <div>
+                        <field name="youtube_videos">
+                            <tree string="YouTube Videos">
+                                <field name="video_title"/>
+                                <button name="play_video" string="Play Video" type="object"/>
+                            </tree>
+                        </field>
+                    </div>
+                    <div id="youtube_video_player" style="text-align: center; margin-top: 20px;">
+                        <iframe width="560" height="315" src="" frameborder="0" allowfullscreen="true"></iframe>
+                    </div>
                 </sheet>
-                <div id="videoListContainer" data-videos='t-esc="record.videos_list | safe_json"'></div>
             </form>
         </field>
     </record>

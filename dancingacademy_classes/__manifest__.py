@@ -7,12 +7,11 @@
         'views/class_views.xml', 
     ],
     'assets': {
-    'web.assets_frontend': [
-        'dancingacademy_classes/static/src/html/video_list.html',
-        'dancingacademy_classes/static/src/css/video_list.css',
-        'dancingacademy_classes/static/src/js/video_list.js',
+    'web.assets_backend': [
+        'dancingacademy_classes/static/src/js/youtube_player.js',
+        'dancingacademy_classes/static/src/css/style.css',
     ],
-},
+    },
     'installable': True,
     'application': True,
 }
