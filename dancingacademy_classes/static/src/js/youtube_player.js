@@ -3,27 +3,25 @@ odoo.define('dancingacademy_classes', function (require) {
 
     console.log("Iniciando módulo dancingacademy_classes...");
 
-    document.addEventListener('DOMContentLoaded', function () {
-        console.log("DOM completamente cargado, iniciando lógica...");
+    // Variable para rastrear si la lógica ya se ejecutó
+    let currentView = null;
 
-        // Función para esperar hasta que un elemento esté disponible
-        function waitForElement(selector, callback) {
+    // Encapsulamos la lógica principal en una función reutilizable
+    function initializeLogic() {
+        console.log("Inicializando lógica de la clase...");
+
+        // Función para esperar hasta que un elemento esté disponible (con máximo 2 intentos)
+        function waitForElement(selector, callback, maxAttempts = 2, attempt = 1) {
             const element = document.querySelector(selector);
-            if (element) {
-                callback(element);
-            } else {
-                console.log(`Elemento ${selector} aún no disponible, reintentando...`);
-                setTimeout(() => waitForElement(selector, callback), 500);
-            }
-        }
 
-        // Manejar el mensaje de estado
-        function handleStatusMessage() {
-            waitForElement("#js_status_message", (statusMessage) => {
-                console.log("Contenedor js_status_message encontrado.");
-                statusMessage.textContent = " ";
-                //statusMessage.style.color = "green"; // Cambiar estilo
-            });
+            if (element) {
+                callback(element); // Si el elemento existe, ejecutamos el callback
+            } else if (attempt < maxAttempts) {
+                console.log(`Elemento ${selector} aún no disponible, intento ${attempt} de ${maxAttempts}...`);
+                setTimeout(() => waitForElement(selector, callback, maxAttempts, attempt + 1), 500); // Reintenta
+            } else {
+                console.error(`Elemento ${selector} no encontrado después de ${maxAttempts} intentos.`);
+            }
         }
 
         // Manejar el campo de entrada de la URL
@@ -110,7 +108,6 @@ odoo.define('dancingacademy_classes', function (require) {
                 }
 
                 const videoId = videoSnippet.resourceId.videoId;
-                //const title = videoSnippet.title;
                 const thumbnailUrl = videoSnippet.thumbnails.medium.url;
 
                 const videoDiv = document.createElement("div");
@@ -119,7 +116,6 @@ odoo.define('dancingacademy_classes', function (require) {
 
                 const img = document.createElement("img");
                 img.src = thumbnailUrl;
-                //img.alt = title;
                 img.style.width = "200px";
                 img.style.cursor = "pointer";
 
@@ -127,18 +123,35 @@ odoo.define('dancingacademy_classes', function (require) {
                     window.open(`https://www.youtube.com/watch?v=${videoId}`, "_blank");
                 });
 
-                const videoTitle = document.createElement("p");
-                //videoTitle.textContent = title;
-                //videoTitle.style.fontSize = "14px";
-
                 videoDiv.appendChild(img);
-                //videoDiv.appendChild(videoTitle);
                 videoGallery.appendChild(videoDiv);
             });
         }
 
-        // Ejecutar inmediatamente la lógica
-        handleStatusMessage();
-        handlePlaylistInput(); // Esto asegura que se ejecute directamente al cargar la página
+        // Ejecutar la lógica
+        handlePlaylistInput();
+    }
+
+    // Detectar cambios en el DOM al cargar nuevas vistas
+    document.addEventListener('DOMContentLoaded', function () {
+        const observer = new MutationObserver((mutationsList) => {
+            mutationsList.forEach((mutation) => {
+                if (mutation.addedNodes.length > 0) {
+                    const content = document.querySelector('.o_form_view'); // Cambia este selector si es necesario
+                    if (content && content !== currentView) {
+                        console.log("Cambio de vista detectado, inicializando lógica...");
+                        currentView = content; // Actualizamos la vista actual
+                        initializeLogic(); // Inicializa la lógica al detectar un cambio de vista
+                    }
+                }
+            });
+        });
+
+        // Configurar el observador para detectar cambios en el DOM
+        observer.observe(document.body, { childList: true, subtree: true });
+
+        // Ejecutar la lógica inicial
+        initializeLogic();
     });
 });
+

@@ -102,6 +102,15 @@ a{
 }
 
 
+.o_searchview_facet .o_facet_values {
+    border-color: pink !important;  
+} 
+
+.o_searchview_facet .o_searchview_facet_label {
+    background-color: pink !important;  
+    color: var(--SearchBar-facet-color, black);
+} 
+
 
 
 

@@ -13,34 +13,26 @@
     </record>
 
     <!-- Vista de formulario para el modelo de clase -->
-
     <record id="view_class_form" model="ir.ui.view">
         <field name="name">class.form</field>
         <field name="model">dancingacademy.class</field>
         <field name="arch" type="xml">
             <form string="Dancing Academy Class">
-                <sheet>
+                <sheet>                
+                    <h1><field name="name"/></h1>
                     <group>
-                        <field name="name"/>
                         <field name= "teacher_id"/>
+                        <field name= "price"/>
+                        <field name= "dancer_ids" widget="many2many_tags"/>
+                        <field name= "total_dancers"/>
                         <field name="youtube_playlist_url" string="YouTube Playlist URL"/>
                     </group>
-
-                    <!-- Contenedor para mostrar el estado del JavaScript -->
-                    <div id="js_status_message" style="margin-bottom: 20px; color: blue;">
-                        <p>Actualiza la página para ver los vídeos de la clase.</p>
-                    </div>
-
                     <!-- Contenedor para los videos -->
                     <div id="youtube_video_gallery" style="margin-top: 20px; display: flex; overflow-x: auto; gap: 15px;"/>
-
-
                 </sheet>
             </form>
         </field>
     </record>
-
-
 
     <!-- Herencia para extender vistas base -->
     <template id="video_list_template" inherit_id="dancingacademy_classes.view_class_form">

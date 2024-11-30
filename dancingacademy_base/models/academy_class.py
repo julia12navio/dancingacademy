@@ -14,8 +14,7 @@ class AcademyClass(models.Model):
         'member.dancer',
         string="Dancers",
     )
-    total_dancers = fields.Integer(string="Total Dancers" ,compute='_compute_total_dancers',)
-    videos = fields.Binary(string="Videos")
+    total_dancers = fields.Integer(string="Total Dancers" ,compute='_compute_total_dancers')
     price = fields.Float(string="Price")
 
     @api.depends('dancer_ids')
