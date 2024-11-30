@@ -13,6 +13,7 @@
     </record>
 
     <!-- Vista de formulario para el modelo de clase -->
+
     <record id="view_class_form" model="ir.ui.view">
         <field name="name">class.form</field>
         <field name="model">dancingacademy.class</field>
@@ -21,30 +22,25 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="teacher_id"/>
-                        <field name="dancer_ids" widget="many2many_tags"/>
-                        <field name="total_dancers"/>
-                        <field name="price"/>
-                        <field name="youtube_playlist_url"/>
+                        <field name= "teacher_id"/>
+                        <field name="youtube_playlist_url" string="YouTube Playlist URL"/>
                     </group>
-                    <div>
-                        <button type="object" name="fetch_youtube_videos" class="oe_highlight" string="Fetch Videos"/>
+
+                    <!-- Contenedor para mostrar el estado del JavaScript -->
+                    <div id="js_status_message" style="margin-bottom: 20px; color: blue;">
+                        <p>Actualiza la página para ver los vídeos de la clase.</p>
                     </div>
-                    <div>
-                        <field name="youtube_videos">
-                            <tree string="YouTube Videos">
-                                <field name="video_title"/>
-                                <button name="play_video" string="Play Video" type="object"/>
-                            </tree>
-                        </field>
-                    </div>
-                    <div id="youtube_video_player" style="text-align: center; margin-top: 20px;">
-                        <iframe width="560" height="315" src="" frameborder="0" allowfullscreen="true"></iframe>
-                    </div>
+
+                    <!-- Contenedor para los videos -->
+                    <div id="youtube_video_gallery" style="margin-top: 20px; display: flex; overflow-x: auto; gap: 15px;"/>
+
+
                 </sheet>
             </form>
         </field>
     </record>
+
+
 
     <!-- Herencia para extender vistas base -->
     <template id="video_list_template" inherit_id="dancingacademy_classes.view_class_form">

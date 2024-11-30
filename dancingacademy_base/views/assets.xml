@@ -1,7 +1,0 @@
-<odoo>
-    <template id="assets_backend" name="dancingacademy_base assets" inherit_id="web.assets_backend">
-        <xpath expr="." position="inside">
-            <link rel="stylesheet" href="/dancingacademy_base/static/src/css/style.css"/>
-        </xpath>
-    </template>
-</odoo>
