@@ -2,7 +2,7 @@
 {
     'name': 'Base Dancing Academy',
     'version': '1.0',
-    'depends': ['base'],
+    'depends': ['base', 'calendar'],
     'data': [
         'security/security_groups.xml',
         'security/ir.model.access.csv',

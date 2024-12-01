@@ -4,3 +4,4 @@ from . import member_dancer
 from . import member_management_team
 from . import member_teacher
 from . import academy_class
+from . import academy_schedule

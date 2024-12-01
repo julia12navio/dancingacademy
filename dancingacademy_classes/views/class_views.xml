@@ -25,10 +25,80 @@
                         <field name= "price"/>
                         <field name= "dancer_ids" widget="many2many_tags"/>
                         <field name= "total_dancers"/>
+                    </group>
+
+                    
+                    <group>
                         <field name="youtube_playlist_url" string="YouTube Playlist URL"/>
                     </group>
-                    <!-- Contenedor para los videos -->
-                    <div id="youtube_video_gallery" style="margin-top: 20px; display: flex; overflow-x: auto; gap: 15px;"/>
+                    <div id="youtube_video_gallery" style="margin-top: 20px; display: flex; overflow-x: auto; gap: 15px;"/>                
+
+                    <notebook>
+                        <page string = "Schedule">
+                        
+                            <group string="Days of the Week">
+                                <div class="days-of-week-horizontal">
+                                    <div class="day-item">
+                                        <field name="monday"/>
+                                        <label for="monday" string="Monday"/>
+                                    </div>
+                                    <div class="day-item">
+                                        <field name="tuesday"/>
+                                        <label for="tuesday" string="Tuesday"/>
+                                    </div>
+                                    <div class="day-item">
+                                        <field name="wednesday"/>
+                                        <label for="wednesday" string="Wednesday"/>
+                                    </div>
+                                    <div class="day-item">
+                                        <field name="thursday"/>
+                                        <label for="thursday" string="Thursday"/>
+                                    </div>
+                                    <div class="day-item">
+                                        <field name="friday"/>
+                                        <label for="friday" string="Friday"/>
+                                    </div>
+                                    <div class="day-item">
+                                        <field name="saturday"/>
+                                        <label for="saturday" string="Saturday"/>
+                                    </div>
+                                    <div class="day-item">
+                                        <field name="sunday"/>
+                                        <label for="sunday" string="Sunday"/>
+                                    </div>
+                                </div>
+                            </group>
+                            
+                            <group string="Time Monday" attrs="{'invisible': [('monday', '=', False)]}">
+                                <field name="monday_start_time" placeholder="HH:MM"/>
+                                <field name="monday_end_time" placeholder="HH:MM"/>
+                            </group> 
+                            <group string="Time Tuesday" attrs="{'invisible': [('tuesday', '=', False)]}">
+                                <field name="tuesday_start_time" placeholder="HH:MM"/>
+                                <field name="tuesday_end_time" placeholder="HH:MM"/>
+                            </group>                             
+                            <group string="Time Wenesday" attrs="{'invisible': [('wednesday', '=', False)]}">
+                                <field name="wednesday_start_time" placeholder="HH:MM"/>
+                                <field name="wednesday_end_time" placeholder="HH:MM"/>
+                            </group>                             
+                            <group string="Time Thursday" attrs="{'invisible': [('thursday', '=', False)]}">
+                                <field name="thursday_start_time"  placeholder="HH:MM"/>
+                                <field name="thursday_end_time" placeholder="HH:MM"/>
+                            </group>                             
+                            <group string="Time Friday" attrs="{'invisible': [('friday', '=', False)]}">
+                                <field name="friday_start_time"  placeholder="HH:MM"/>
+                                <field name="friday_end_time" placeholder="HH:MM"/>
+                            </group>                             
+                            <group string="Time Saturday" attrs="{'invisible': [('saturday', '=', False)]}">
+                                <field name="saturday_start_time" placeholder="HH:MM"/>
+                                <field name="saturday_end_time"  placeholder="HH:MM"/>    
+                            </group>                             
+                            <group string="Time Sunday" attrs="{'invisible': [('sunday', '=', False)]}">
+                                <field name="sunday_start_time"  placeholder="HH:MM"/>
+                                <field name="sunday_end_time" placeholder="HH:MM"/>
+                            </group>     
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>

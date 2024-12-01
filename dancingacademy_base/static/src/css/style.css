@@ -81,9 +81,9 @@
 }
 
 /*Titulo de pagina*/
-a{
+/* a{
     color:pink !important;
-}
+} */
 
 /*Icono filtrar por*/
 .o_facet .fa, .o_searchview .fa, .o_cp_buttons .fa {
@@ -111,7 +111,9 @@ a{
     color: var(--SearchBar-facet-color, black);
 } 
 
-
+.a .o_cw_popover_edit{
+    color: black !important;
+}
 
 
 

@@ -8,7 +8,8 @@
     ],
     'assets': {
         'web.assets_backend': [
-            'dancingacademy_classes/static/src/js/youtube_player.js',
+            'dancingacademy_classes/static/src/js/youtube_player.js',            
+            'dancingacademy_classes/static/src/css/style_classes.css',
         ],
     'web.assets_qweb': [],
     },

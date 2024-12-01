@@ -1,0 +1,11 @@
+.days-of-week-horizontal {
+    display: flex;
+    gap: 15px; /* Reduce el espacio entre los días */
+    align-items: center;
+}
+
+.day-item {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduce el espacio entre el checkbox y el texto */
+}

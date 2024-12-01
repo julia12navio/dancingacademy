@@ -17,21 +17,21 @@
 
     <!-- Menú para Usuarios en Academy Members -->
     <menuitem id="academy_users_menu" 
-              name="Users" 
-              parent="academy_members_menu" 
-              sequence="10"/>
+            name="Users" 
+            parent="academy_members_menu" 
+            sequence="10"/>
 
     <!-- Submenú para vista de Usuarios -->
     <menuitem id="academy_users_kanban_menu" 
-              name="Users" 
-              parent="academy_users_menu" 
-              action="action_view_res_users_kanban" 
-              sequence="1"/>
+            name="Users" 
+            parent="academy_users_menu" 
+            action="action_view_res_users_kanban" 
+            sequence="1"/>
 
     <!-- Submenú para vista de Compañía -->
     <menuitem id="academy_company_kanban_menu" 
-              name="Company" 
-              parent="academy_users_menu" 
-              action="action_view_res_company_kanban" 
-              sequence="2"/>
+            name="Company" 
+            parent="academy_users_menu" 
+            action="action_view_res_company_kanban" 
+            sequence="2"/>
 </odoo>
