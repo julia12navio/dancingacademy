@@ -7,19 +7,17 @@
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click">
-                            <div class="oe_kanban_details">
-                                <field name="image" widget="image" class="oe_kanban_avatar"/>
-                                <strong><field name="name"/><br/><field name="last_name" /></strong>
-                                <div>Dancer</div>
+                            <div class="oe_kanban_details" style="display: flex; align-items: center;">
+                                <div>
+                                    <field name="image" widget="image" class="oe_kanban_avatar"
+                                        style="width: 60px; height: 60px; object-fit: cover; margin-right: 10px;"/>
+                                </div>
+                                <div>
+                                    <strong><field name="name"/></strong>
+                                    <div>Dancer</div>
+                                </div>
                             </div>
                         </div>
-
-                    <!-- <t t-name="kanban-box">
-                        <div class="o_kanban_record">
-                            <field name="image" widget="image" class="oe_avatar" />
-                            <field name="name" />
-                            <field name="last_name" />
-                        </div> -->
                     </t>
                 </templates>
             </kanban>
@@ -31,16 +29,32 @@
         <field name="model">member.dancer</field>
         <field name="arch" type="xml">
             <form string="Dancers">
+            <sheet>         
+                <field name="image" widget="image" class="oe_avatar" />
+                <h1><field name="name" /></h1>
                 <group>
-                    <field name="name" />
                     <field name="last_name" />
                     <field name="user_id" string="Usuario"/>
                     <field name="class_ids" widget="many2many_tags"/>
                     <field name="teacher_ids" widget="many2many_tags"/>
                     <field name="comments" />
-                    <field name="image" widget="image" />
                 </group>
+            </sheet>
             </form>
         </field>
     </record>
+
+        <record id="view_member_dancer_tree" model="ir.ui.view">
+        <field name="name">.member.dancer.tree</field>
+        <field name="model">member.dancer</field>
+        <field name="arch" type="xml">
+            <tree string="Dancers">
+                <field name="name" string="Nombre"/>
+                <field name="last_name" string="Apellido"/>
+                <field name="class_ids" string="Clases" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+
 </odoo>

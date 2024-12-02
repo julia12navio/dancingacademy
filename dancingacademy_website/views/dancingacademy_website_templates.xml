@@ -1,0 +1,60 @@
+<odoo>
+
+    <template id="classes_list_template" name="Classes List">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1>Classes</h1>
+                <div class="row">
+                    <t t-foreach="classes" t-as="class">
+                        <div class="col-md-4">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h5 class="card-title"><t t-esc="class.name"/></h5>
+                                    <p class="card-text"><t t-esc="class.teacher_id.name"/></p>
+                                    <p class="card-text">Price: <t t-esc="class.price"/> $</p>
+                                    <a t-att-href="'/classes/%s' % class.id" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="class_detail_template" name="Class Detail">
+        <t t-call="website.layout">
+            <div class="container">
+                <h1><t t-esc="class.name"/></h1>
+                <p><strong>Teacher:</strong> <t t-esc="class.teacher_id.name"/></p>
+                <p><strong>Price:</strong> <t t-esc="class.price"/> €</p>
+                <h3>Schedule</h3>
+                <ul>
+                    <li t-if="class.monday">
+                        <strong>Monday:</strong> <t t-esc="class.monday_start_time"/> - <t t-esc="class.monday_end_time"/>
+                    </li>
+                    <li t-if="class.tuesday">
+                        <strong>Tuesday:</strong> <t t-esc="class.tuesday_start_time"/> - <t t-esc="class.tuesday_end_time"/>
+                    </li>
+                    <li t-if="class.wednesday">
+                        <strong>Wednesday:</strong> <t t-esc="class.wednesday_start_time"/> - <t t-esc="class.wednesday_end_time"/>
+                    </li>
+                    <li t-if="class.thursday">
+                        <strong>Thursday:</strong> <t t-esc="class.thursday_start_time"/> - <t t-esc="class.thursday_end_time"/>
+                    </li>
+                    <li t-if="class.friday">
+                        <strong>Friday:</strong> <t t-esc="class.friday_start_time"/> - <t t-esc="class.friday_end_time"/>
+                    </li>
+                    <li t-if="class.saturday">
+                        <strong>Saturday:</strong> <t t-esc="class.saturday_start_time"/> - <t t-esc="class.saturday_end_time"/>
+                    </li>
+                    <li t-if="class.sunday">
+                        <strong>Sunday:</strong> <t t-esc="class.sunday_start_time"/> - <t t-esc="class.sunday_end_time"/>
+                    </li>
+                </ul>
+            </div>
+        </t>
+    </template>
+
+
+</odoo>

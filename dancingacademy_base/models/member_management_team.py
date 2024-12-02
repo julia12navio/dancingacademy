@@ -10,3 +10,4 @@ class MemberManagementTeam(models.Model):
     phone = fields.Char()
     location = fields.Char()
     user_id = fields.Many2one('res.users', string="user", required=True, ondelete="cascade", help="User asociated with management team")
+    email = fields.Char()

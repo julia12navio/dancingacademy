@@ -38,11 +38,34 @@ class DancingAcademyClass(models.Model):
 
     schedule_ids = fields.One2many('calendar.event', 'class_id', string='Schedules')
 
+    def _update_teacher_and_students(self):
+        """Actualiza relaciones entre la clase, el profesor y los alumnos."""
+        for record in self:
+            # Si hay un profesor asignado
+            if record.teacher_id:
+                # Asignar la clase al profesor
+                if record.id not in record.teacher_id.class_ids.ids:
+                    record.teacher_id.class_ids = [(4, record.id)]
+
+                # Asignar los alumnos de la clase al profesor
+                for dancer in record.dancer_ids:
+                    if dancer.id not in record.teacher_id.student_ids.ids:
+                        record.teacher_id.student_ids = [(4, dancer.id)]
+
+            # Asignar la clase y el profesor a los alumnos
+            for dancer in record.dancer_ids:
+                if record.id not in dancer.class_ids.ids:
+                    dancer.class_ids = [(4, record.id)]
+                if record.teacher_id and record.teacher_id.id not in dancer.teacher_ids.ids:
+                    dancer.teacher_ids = [(4, record.teacher_id.id)]
+
     @api.model
     def create(self, vals):
-        """Override create to generate schedule events automatically."""
+        """Sobrescribe create para incluir relaciones al crear una nueva clase."""
         record = super(DancingAcademyClass, self).create(vals)
         record.create_calendar_events()
+        # Actualizar relaciones una vez que el registro tenga ID
+        record._update_teacher_and_students()
         return record
 
     def write(self, vals):
@@ -53,7 +76,28 @@ class DancingAcademyClass(models.Model):
                         [f"{day}_end_time" for day in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']]
         if any(field in vals for field in affected_fields):
             self.update_calendar_events()
+                # Actualizar relaciones después de guardar cambios
+
+
+        for record in self:
+            # Obtener todos los profesores relacionados con esta clase
+            all_teachers = self.env['member.teacher'].search([('class_ids', 'in', record.id)])
+            for teacher in all_teachers:
+                # Si el profesor no es el asignado actual, eliminar la relación con la clase
+                if teacher.id != record.teacher_id.id:
+                    teacher.class_ids = [(3, record.id)]
+                    for student in teacher.student_ids:
+                        teacher.student_ids = [(3, student.id)]
+
+                # Recorrer todos los alumnos asociados al profesor
+                for student in teacher.student_ids:
+                    # Si el alumno no está asociado a la clase actual, eliminarlo del profesor
+                    if record.id not in student.class_ids.ids:
+                        teacher.student_ids = [(3, student.id)]
+
+        self._update_teacher_and_students()
         return result
+
 
     def create_calendar_events(self):
         """Generate weekly events in the calendar for all future weeks."""

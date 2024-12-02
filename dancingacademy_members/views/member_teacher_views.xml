@@ -7,19 +7,18 @@
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click">
-                            <div class="oe_kanban_details">
-                                <field name="image" widget="image" class="oe_kanban_avatar"/>
-                                <strong><field name="name"/><br/><field name="last_name" /></strong>
-                                <div>Teachers</div>
+                            <div class="oe_kanban_details" style="display: flex; align-items: center;">
+                                <div>
+                                    <field name="image" widget="image" class="oe_kanban_avatar"
+                                        style="width: 60px; height: 60px; object-fit: cover; margin-right: 10px;"/>
+                                </div>
+                                <div>
+                                    <strong><field name="name"/></strong>
+                                    <div><field name="phone"></field></div>
+                                    <div>Teacher</div>
+                                </div>
                             </div>
                         </div>
-
-                    <!-- <t t-name="kanban-box">
-                        <div class="o_kanban_record">
-                            <field name="image" widget="image" class="oe_avatar" />
-                            <field name="name" />
-                            <field name="last_name" />
-                        </div> -->
                     </t>
                 </templates>
             </kanban>
@@ -31,18 +30,49 @@
         <field name="model">member.teacher</field>
         <field name="arch" type="xml">
             <form string="Teacher">
-                <group>
-                    <field name="name" string="Nombre"/>
-                    <field name="last_name" string="Apellido"/>
-                    <field name="user_id" string="Usuario"/>
-                    <field name="class_ids" string="Clases" widget="many2many_tags"/>
-                    <field name="student_ids" string="Alumnos" widget="many2many_tags"/>
-                    <field name="biography" string="Biografía"/>
-                    <field name="videos" widget="binary" string="Videos"/>
-                    <button name="open_payment_window" string="Pay Teacher" type="object" groups="dancingacademy_members.group_academy_directivo"/>
-                    <field name="image" widget="image" string="Foto"/>
-                </group>
+                <sheet>         
+                    <field name="image" widget="image" class="oe_avatar" />
+                    <h1><field name="name" /></h1>
+                    <group>
+                        <field name="last_name" />          
+                        <field name="user_id" string="Usuario"/>
+                    </group>
+                    <group>
+                        <field name="youtube_playlist_url" string="YouTube Playlist URL"/>
+                    </group>
+                    <div id="youtube_video_gallery" style="margin-top: 20px; display: flex; overflow-x: auto; gap: 15px;"/>                
+                    <notebook>
+                        <page name="Clases">
+                        <div>                       
+                            <label for="class_ids" string="Clases"/>
+                            <field name="class_ids" string="Clases" widget="many2many_tags"/>
+                        </div> 
+                        <div>
+                            <label for="student_ids" string="Alumnos"/>
+                            <field name="student_ids" string="Alumnos" widget="many2many_tags"/>
+                        </div>
+                        </page>
+                        <page name="INFO">
+                            <label for="biography" string="Biography"/>
+                            <field name="biography" string="Biografía"/>
+                        </page>
+                    </notebook>
+                </sheet>
             </form>
         </field>
     </record>
-</odoo>
+
+    <record id="view_member_teacher_tree" model="ir.ui.view">
+        <field name="name">member.teacher.tree</field>
+        <field name="model">member.teacher</field>
+        <field name="arch" type="xml">
+            <tree string="Teachers">
+                <field name="name" string="Nombre"/>
+                <field name="last_name" string="Apellido"/>
+                <field name="class_ids" string="Clases" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+
+</odoo> 
