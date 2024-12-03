@@ -3,7 +3,6 @@
     'version': '1.0',
     'depends': ['web','dancingacademy_base'],
     'data': [
-        'security/ir.model.access.csv',
         'views/class_views.xml', 
     ],
     'assets': {

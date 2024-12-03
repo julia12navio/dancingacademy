@@ -1,0 +1,52 @@
+<odoo>
+    <!-- Vista Tree -->
+    <record id="view_attendance_academy_tree" model="ir.ui.view">
+        <field name="name">attendance.academy.tree</field>
+        <field name="model">attendance.academy</field>
+        <field name="arch" type="xml">
+            <tree string="Registros de Asistencia">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="time"/>
+                <field name="class_id"/>
+                <field name="teacher_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Form -->
+    <record id="view_attendance_academy_form" model="ir.ui.view">
+        <field name="name">attendance.academy.form</field>
+        <field name="model">attendance.academy</field>
+        <field name="arch" type="xml">
+            <form string="Registro de Asistencia">
+                <sheet>
+                    <group>
+                        <field name="date"/>
+                        <field name="time" placeholder="HH:MM"/>
+                        <field name="class_id"/>
+                        <field name="teacher_id" />
+                    </group>
+                    <h3>Lista de Asistencia</h3>
+                    <field name="student_ids" context="{'default_attendance_id': active_id}">
+                        <tree editable="bottom" string="Lista de Asistencia">
+                            <field name="student_name" readonly="1"/>
+                            <field name="attended"/>
+                        </tree>
+                    </field>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para el menú -->
+    <record id="action_attendance_academy" model="ir.actions.act_window">
+        <field name="name">Asistencia</field>
+        <field name="res_model">attendance.academy</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú -->
+    <menuitem id="menu_attendance_management" name="Asistencia" sequence="2"/>
+    <menuitem id="menu_attendance_academy" name="Registros de Asistencia" parent="menu_attendance_management" action="action_attendance_academy"/>
+</odoo>

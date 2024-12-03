@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': 'Academy Members',
+    'name': 'Dancing Academy Members',
     'version': '1.0',
-    'depends': ['dancingacademy_base'],
+    'depends': ['dancingacademy_base','payment'],
     'data': [
         'security/ir.model.access.csv',
         'views/menus.xml',

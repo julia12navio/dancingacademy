@@ -6,6 +6,7 @@
     'data': [
         'security/security_groups.xml',
         'security/ir.model.access.csv',
+        'security/ir_rule.xml',
     ],
     'assets': {
         'web.assets_backend': [

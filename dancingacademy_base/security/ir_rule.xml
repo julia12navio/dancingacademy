@@ -1,0 +1,37 @@
+<odoo>
+    <!-- Regla para Dancers: Solo pueden ver las clases, pero no el campo dancer_ids -->
+    <record id="rule_academy_class_dancer" model="ir.rule">
+        <field name="name">Dancer Access</field>
+        <field name="model_id" ref="model_dancingacademy_class"/>
+        <field name="groups" eval="[(4, ref('dancingacademy_base.group_academy_dancer'))]"/>
+        <field name="domain_force">[]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <!-- Regla para Teachers: Solo pueden ver las clases asociadas a ellos -->
+    <record id="rule_academy_class_teacher" model="ir.rule">
+        <field name="name">Teacher Access</field>
+        <field name="model_id" ref="model_dancingacademy_class"/>
+        <field name="groups" eval="[(4, ref('dancingacademy_base.group_academy_teacher'))]"/>
+        <field name="domain_force">[('teacher_id.user_id', '=', user.id)]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="0"/>
+        <field name="perm_create" eval="0"/>
+        <field name="perm_unlink" eval="0"/>
+    </record>
+
+    <!-- Regla para Management Team: Acceso completo -->
+    <record id="rule_academy_class_manager" model="ir.rule">
+        <field name="name">Management Team Access</field>
+        <field name="model_id" ref="model_dancingacademy_class"/>
+        <field name="groups" eval="[(4, ref('dancingacademy_base.group_academy_management_team'))]"/>
+        <field name="domain_force">[]</field>
+        <field name="perm_read" eval="1"/>
+        <field name="perm_write" eval="1"/>
+        <field name="perm_create" eval="1"/>
+        <field name="perm_unlink" eval="1"/>
+    </record>
+</odoo>

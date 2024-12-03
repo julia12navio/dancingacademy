@@ -1,0 +1,63 @@
+<odoo>
+    <!-- Vista Tree -->
+    <record id="view_monthly_academy_tree" model="ir.ui.view">
+        <field name="name">monthly.academy.tree</field>
+        <field name="model">monthly.academy</field>
+        <field name="arch" type="xml">
+            <tree string="Mensualidades">
+                <field name="name"/>
+                <field name="benefit" string="Beneficio"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista Form -->
+    <record id="view_monthly_academy_form" model="ir.ui.view">
+        <field name="name">monthly.academy.form</field>
+        <field name="model">monthly.academy</field>
+        <field name="arch" type="xml">
+            <form string="Mensualidad">
+                <sheet>
+                    <h1><field name="name"/></h1>
+                    <div class="o_row">
+                        <!-- Contenedor de ingresos -->
+                        <div class="o_col" style="width: 50%; float: left; padding-right: 10px;">
+                            <h2>Ingresos</h2>
+                            <group>
+                                <field name="student_count" readonly="1"/>
+                                <field name="total_students_payment" readonly="1"/>
+                            </group>
+                        </div>
+
+                        <!-- Contenedor de costes -->
+                        <div class="o_col" style="width: 50%; float: right; padding-left: 10px;">
+                            <h2>Costes</h2>
+                            <group>
+                                <field name="teacher_count" readonly="1"/>
+                                <field name="total_teachers_salary" readonly="1"/>
+                                <field name="total_monthly_costs" readonly="1"/>
+                            </group>
+                        </div>
+                    </div>
+
+                    <!-- Beneficio centrado -->
+                    <div style="text-align: center; margin-top: 20px;">
+                        <h1 style="font-weight: bold;">Beneficio</h1>
+                        <field name="benefit" readonly="1" widget="monetary"/>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para las vistas -->
+    <record id="action_monthly_academy" model="ir.actions.act_window">
+        <field name="name">Mensualidades</field>
+        <field name="res_model">monthly.academy</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú -->
+    <menuitem id="menu_school" name="Mensualidad" sequence="1"/>
+    <menuitem id="menu_monthly_academy" name="Mensualidades" parent="menu_school" action="action_monthly_academy" sequence="1"/>
+</odoo>

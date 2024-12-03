@@ -44,17 +44,35 @@
                     <notebook>
                         <page name="Clases">
                         <div>                       
-                            <label for="class_ids" string="Clases"/>
-                            <field name="class_ids" string="Clases" widget="many2many_tags"/>
+                            <div><label for="class_ids" string="Clases"/></div>
+                            <div><field name="class_ids" string="Clases" widget="many2many_tags"/></div>
+                            <div>
+                            <label for="total_classes" string="Clases totales"/>
+                            <field name="total_classes"/>
+                            </div>
                         </div> 
                         <div>
-                            <label for="student_ids" string="Alumnos"/>
-                            <field name="student_ids" string="Alumnos" widget="many2many_tags"/>
+                            <div><label for="student_ids" string="Alumnos"/></div>
+                            <div><field name="student_ids" string="Alumnos" widget="many2many_tags"/></div>
+                            <div>
+                            <label for="total_students" string="Alumnos totales"/>
+                            <field name="total_students"/>
+                            </div>
                         </div>
                         </page>
                         <page name="INFO">
                             <label for="biography" string="Biography"/>
                             <field name="biography" string="Biografía"/>
+                        </page>
+                        <page name="Sueldo">
+                            <div>
+                            <label for="sueldo" string="sueldo"/>
+                            <field name="sueldo"/><span>€</span>
+                            </div>
+                            <div>
+                            <label for="bank_account" string="Cuenta bancaria"/>
+                            <field name="bank_account"/>
+                            </div>
                         </page>
                     </notebook>
                 </sheet>

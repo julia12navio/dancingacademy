@@ -1,0 +1,23 @@
+<odoo>
+    <!-- Vista Tree para Costes Mensuales -->
+    <record id="view_costes_mensuales_tree" model="ir.ui.view">
+        <field name="name">monthly.costs.academy.tree</field>
+        <field name="model">monthly_costs.academy</field>
+        <field name="arch" type="xml">
+            <tree string="Costes Mensuales">
+                <field name="name"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Acción para Costes Mensuales -->
+    <record id="action_costes_mensuales" model="ir.actions.act_window">
+        <field name="name">Costes Mensuales</field>
+        <field name="res_model">monthly_costs.academy</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú para Costes Mensuales -->
+    <menuitem id="menu_costes_mensuales" name="Costes Mensuales" parent="menu_school" action="action_costes_mensuales"/>
+</odoo>

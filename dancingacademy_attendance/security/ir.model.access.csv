@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_attendance_academy_user,access_attendance_academy_user,model_attendance_academy,base.group_user,1,1,1,1
+access_attendance_academy_line_user,access_attendance_academy_line_user,model_attendance_academy_line,base.group_user,1,1,1,1

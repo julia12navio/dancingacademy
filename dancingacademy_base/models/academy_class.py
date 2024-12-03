@@ -38,6 +38,23 @@ class DancingAcademyClass(models.Model):
 
     schedule_ids = fields.One2many('calendar.event', 'class_id', string='Schedules')
 
+    is_user_dancer = fields.Boolean(string="Is User Dancer", compute="_compute_is_user_dancer")
+    is_user_teacher = fields.Boolean(string="Is Current User Teacher", compute="_compute_user_is_teacher", store=False)
+
+    @api.depends('dancer_ids')
+    def _compute_is_user_dancer(self):
+        for record in self:
+            record.is_user_dancer = self.env.user.has_group('dancingacademy_base.group_academy_dancer')
+
+    @api.depends('teacher_id')
+    def _compute_user_is_teacher(self):
+        """Determina si el usuario actual es el profesor de esta clase."""
+        for record in self:
+            user = self.env.user
+            # Verifica si el usuario actual está relacionado con el profesor asignado
+            is_teacher = self.env['member.teacher'].search([('user_id', '=', user.id)], limit=1)
+            record.is_user_teacher = bool(is_teacher and is_teacher.id == record.teacher_id.id)
+            
     def _update_teacher_and_students(self):
         """Actualiza relaciones entre la clase, el profesor y los alumnos."""
         for record in self:
@@ -86,14 +103,18 @@ class DancingAcademyClass(models.Model):
                 # Si el profesor no es el asignado actual, eliminar la relación con la clase
                 if teacher.id != record.teacher_id.id:
                     teacher.class_ids = [(3, record.id)]
-                    for student in teacher.student_ids:
-                        teacher.student_ids = [(3, student.id)]
 
-                # Recorrer todos los alumnos asociados al profesor
-                for student in teacher.student_ids:
-                    # Si el alumno no está asociado a la clase actual, eliminarlo del profesor
-                    if record.id not in student.class_ids.ids:
-                        teacher.student_ids = [(3, student.id)]
+                    # Eliminar estudiantes de este profesor si no comparten clases válidas
+                    students_to_remove = teacher.student_ids.filtered(
+                        lambda student: not any(class_id in teacher.class_ids.ids for class_id in student.class_ids.ids)
+                    )
+                    teacher.student_ids = [(3, student.id) for student in students_to_remove]
+
+                # Validar los estudiantes asociados al profesor
+                students_to_remove = teacher.student_ids.filtered(
+                    lambda student: not any(class_id in teacher.class_ids.ids for class_id in student.class_ids.ids)
+                )
+                teacher.student_ids = [(3, student.id) for student in students_to_remove]
 
         self._update_teacher_and_students()
         return result

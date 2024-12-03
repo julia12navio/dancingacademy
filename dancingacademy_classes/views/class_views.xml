@@ -23,7 +23,11 @@
                     <group>
                         <field name= "teacher_id"/>
                         <field name= "price"/>
-                        <field name= "dancer_ids" widget="many2many_tags"/>
+                        <field name="is_user_teacher" invisible="1"/>
+                        <field name= "dancer_ids" 
+                            widget="many2many_tags"
+                            attrs="{'invisible': [('is_user_teacher', '=', False)]}"
+                            groups="dancingacademy_base.group_academy_teacher,dancingacademy_base.group_academy_management_team"/>
                         <field name= "total_dancers"/>
                     </group>
 
