@@ -1,0 +1,129 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dancingacademy_classes
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-03 17:29+0000\n"
+"PO-Revision-Date: 2024-12-03 17:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dancingacademy_classes
+#: model:ir.model,name:dancingacademy_classes.model_dancingacademy_class
+msgid "Class"
+msgstr "Clase"
+
+#. module: dancingacademy_classes
+#: model:ir.actions.act_window,name:dancingacademy_classes.action_dancingacademy_class
+#: model:ir.ui.menu,name:dancingacademy_classes.menu_dancingacademy_class
+#: model:ir.ui.menu,name:dancingacademy_classes.menu_dancingacademy_root
+msgid "Classes"
+msgstr "Clases"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Dancing Academy Class"
+msgstr "Dancing Academy Clases"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Days of the Week"
+msgstr "Días de la semana"
+
+#. module: dancingacademy_classes
+#: model:ir.model.fields,field_description:dancingacademy_classes.field_dancingacademy_class__is_user_management
+msgid "Es Management"
+msgstr "Es del equipo directivo"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Friday"
+msgstr "Viernes"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "HH:MM"
+msgstr "HH:MM"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Monday"
+msgstr "Lunes"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Saturday"
+msgstr "Sábado"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Schedule"
+msgstr "Horario"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Sunday"
+msgstr "Domingo"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Thursday"
+msgstr "Jueves"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Time Friday"
+msgstr "Hora Viernes"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Time Monday"
+msgstr "Hora Lunes"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Time Saturday"
+msgstr "Hora Sábado"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Time Sunday"
+msgstr "Hora Domingo"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Time Thursday"
+msgstr "Hora Jueves"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Time Tuesday"
+msgstr "Hora Martes"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Time Wenesday"
+msgstr "Hora Miércoles"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Tuesday"
+msgstr "Martes"
+
+#. module: dancingacademy_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#. module: dancingacademy_classes
+#: model:ir.model.fields,field_description:dancingacademy_classes.field_dancingacademy_class__youtube_playlist_url
+#: model_terms:ir.ui.view,arch_db:dancingacademy_classes.view_class_form
+msgid "YouTube Playlist URL"
+msgstr "Lista de reproducción YouTube"

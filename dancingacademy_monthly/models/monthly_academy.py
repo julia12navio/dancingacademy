@@ -5,12 +5,12 @@ class MensualidadAcademy(models.Model):
     _description = 'Página de Mensualidad'
 
     name = fields.Char(required=True)
-    student_count = fields.Integer(string="Cantidad de Alumnos")
-    total_students_payment = fields.Float(string="Total Pago Alumnos")
-    teacher_count = fields.Integer(string="Cantidad de Profesores")
-    total_teachers_salary = fields.Float(string="Total Sueldos Profesores")
-    total_monthly_costs = fields.Float(string="Costes Mensuales")
-    benefit = fields.Float(string="Beneficio")
+    student_count = fields.Integer(string="Amount of Dancers")
+    total_students_payment = fields.Float(string="Total student payment")
+    teacher_count = fields.Integer(string="Amount of Teachers")
+    total_teachers_salary = fields.Float(string="Total Teacher Salaries")
+    total_monthly_costs = fields.Float(string="Monthly costs")
+    benefit = fields.Float(string="Situation")
 
     @api.model
     def create(self, vals):

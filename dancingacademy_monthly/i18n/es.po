@@ -1,0 +1,137 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dancingacademy_monthly
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-03 17:39+0000\n"
+"PO-Revision-Date: 2024-12-03 17:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__benefit
+#: model_terms:ir.ui.view,arch_db:dancingacademy_monthly.view_monthly_academy_form
+#: model_terms:ir.ui.view,arch_db:dancingacademy_monthly.view_monthly_academy_tree
+msgid "Beneficio"
+msgstr "Situación"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__student_count
+msgid "Cantidad de Alumnos"
+msgstr "Cantidad de Alumnos"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__teacher_count
+msgid "Cantidad de Profesores"
+msgstr "Cantidad de Profesores"
+
+#. module: dancingacademy_monthly
+#: model_terms:ir.ui.view,arch_db:dancingacademy_monthly.view_monthly_academy_form
+msgid "Costes"
+msgstr "Costes"
+
+#. module: dancingacademy_monthly
+#: model:ir.actions.act_window,name:dancingacademy_monthly.action_costes_mensuales
+#: model:ir.model,name:dancingacademy_monthly.model_monthly_costs_academy
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__total_monthly_costs
+#: model:ir.ui.menu,name:dancingacademy_monthly.menu_costes_mensuales
+#: model_terms:ir.ui.view,arch_db:dancingacademy_monthly.view_costes_mensuales_tree
+msgid "Costes Mensuales"
+msgstr "Costes Mensuales"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__create_uid
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__create_date
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__display_name
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__id
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__id
+msgid "ID"
+msgstr "ID"
+
+#. module: dancingacademy_monthly
+#: model_terms:ir.ui.view,arch_db:dancingacademy_monthly.view_monthly_academy_form
+msgid "Ingresos"
+msgstr "Ingresos"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy____last_update
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__write_uid
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__write_date
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: dancingacademy_monthly
+#: model:ir.ui.menu,name:dancingacademy_monthly.menu_school
+#: model_terms:ir.ui.view,arch_db:dancingacademy_monthly.view_monthly_academy_form
+msgid "Mensualidad"
+msgstr "Mensuliadad"
+
+#. module: dancingacademy_monthly
+#: model:ir.actions.act_window,name:dancingacademy_monthly.action_monthly_academy
+#: model:ir.ui.menu,name:dancingacademy_monthly.menu_monthly_academy
+#: model_terms:ir.ui.view,arch_db:dancingacademy_monthly.view_monthly_academy_tree
+msgid "Mensualidades"
+msgstr "Mensualidades"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__name
+msgid "Nombre del Coste"
+msgstr "NOmbre del Coste"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__price
+msgid "Precio"
+msgstr Precio"
+
+#. module: dancingacademy_monthly
+#: model:ir.model,name:dancingacademy_monthly.model_monthly_academy
+msgid "Página de Mensualidad"
+msgstr "Página de Mensualidades"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__total_students_payment
+msgid "Total Pago Alumnos"
+msgstr "Total Pago ALumnos"
+
+#. module: dancingacademy_monthly
+#: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_academy__total_teachers_salary
+msgid "Total Sueldos Profesores"
+msgstr "Total Sueldos Profesores"

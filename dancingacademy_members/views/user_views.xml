@@ -19,7 +19,8 @@
     <menuitem id="academy_users_menu" 
             name="Users" 
             parent="academy_members_menu" 
-            sequence="10"/>
+            sequence="10"
+            groups="dancingacademy_base.group_academy_management_team"/>
 
     <!-- Submenú para vista de Usuarios -->
     <menuitem id="academy_users_kanban_menu" 

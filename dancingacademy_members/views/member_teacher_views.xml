@@ -30,52 +30,62 @@
         <field name="model">member.teacher</field>
         <field name="arch" type="xml">
             <form string="Teacher">
-                <sheet>         
-                    <field name="image" widget="image" class="oe_avatar" />
-                    <h1><field name="name" /></h1>
-                    <group>
-                        <field name="last_name" />          
-                        <field name="user_id" string="Usuario"/>
-                    </group>
-                    <group>
-                        <field name="youtube_playlist_url" string="YouTube Playlist URL"/>
-                    </group>
-                    <div id="youtube_video_gallery" style="margin-top: 20px; display: flex; overflow-x: auto; gap: 15px;"/>                
-                    <notebook>
-                        <page name="Clases">
-                        <div>                       
-                            <div><label for="class_ids" string="Clases"/></div>
-                            <div><field name="class_ids" string="Clases" widget="many2many_tags"/></div>
-                            <div>
-                            <label for="total_classes" string="Clases totales"/>
-                            <field name="total_classes"/>
-                            </div>
-                        </div> 
+            <sheet>
+                <!-- Imagen de perfil -->
+                <field name="image" widget="image" class="oe_avatar" />
+                <h1><field name="name" attrs="{'readonly': [('is_user_management', '=', False)]}"/></h1>
+                <!-- Información básica -->
+                <group>
+                    <field name="last_name" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                    <field name="user_id" string="Usuario" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                </group>
+                <!-- Campo editable de URL -->
+                <group>
+                    <field name="is_user_teacher" invisible="1"/>
+                    <field name="is_user_management" invisible="1"/>
+                    <field name="youtube_playlist_url" string="YouTube Playlist URL"
+                        readonly="0"/>
+                </group>
+                <div id="youtube_video_gallery" style="margin-top: 20px; display: flex; overflow-x: auto; gap: 15px;"/>                
+                <notebook>
+                    <!-- Página de Clases -->
+                    <page name="Clases">
                         <div>
+                            <div><label for="class_ids" string="Clases"/></div>
+                            <div><field name="class_ids" string="Clases" widget="many2many_tags" /></div>
+                            <div>
+                                <label for="total_classes" string="Clases totales"/>
+                                <field name="total_classes" />
+                            </div>
+                        </div>
+                        <div attrs="{'invisible': [('is_user_teacher', '=', False), ('is_user_management', '=', False)]}">
                             <div><label for="student_ids" string="Alumnos"/></div>
                             <div><field name="student_ids" string="Alumnos" widget="many2many_tags"/></div>
                             <div>
-                            <label for="total_students" string="Alumnos totales"/>
-                            <field name="total_students"/>
+                                <label for="total_students" string="Alumnos totales"/>
+                                <field name="total_students" />
                             </div>
                         </div>
-                        </page>
-                        <page name="INFO">
-                            <label for="biography" string="Biography"/>
-                            <field name="biography" string="Biografía"/>
-                        </page>
-                        <page name="Sueldo">
-                            <div>
-                            <label for="sueldo" string="sueldo"/>
-                            <field name="sueldo"/><span>€</span>
-                            </div>
-                            <div>
-                            <label for="bank_account" string="Cuenta bancaria"/>
-                            <field name="bank_account"/>
-                            </div>
-                        </page>
-                    </notebook>
-                </sheet>
+                    </page>
+                    <!-- Página INFO -->
+                    <page name="INFO">
+                        <label for="biography" string="Biography"/>
+                        <field name="biography" string="Biografía" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                    </page>
+                    <!-- Página Sueldo -->
+                    <page name="Sueldo"
+                        attrs="{'invisible': [('is_user_teacher', '=', False), ('is_user_management', '=', False)]}">
+                        <div>
+                            <label for="sueldo" string="sueldo"/><span>: </span>
+                            <field name="sueldo" attrs="{'readonly': [('is_user_management', '=', False)]}"/><span>€</span>
+                        </div>
+                        <div>
+                            <label for="bank_account" string="Cuenta bancaria"/><span>: </span>
+                            <field name="bank_account" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                        </div>
+                    </page>
+                </notebook>
+            </sheet>
             </form>
         </field>
     </record>

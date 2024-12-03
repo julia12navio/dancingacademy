@@ -1,0 +1,215 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dancingacademy_members
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-03 17:32+0000\n"
+"PO-Revision-Date: 2024-12-03 17:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "<span>: </span>"
+msgstr "<span>: </span>"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "<span>€</span>"
+msgstr "<span>€</span>"
+
+#. module: dancingacademy_members
+#: model:ir.ui.menu,name:dancingacademy_members.academy_members_menu
+msgid "Academy Members"
+msgstr "Miembros de la Academia"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "Alumnos"
+msgstr "Alumnos"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "Alumnos totales"
+msgstr "Alumnos totales"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_dancer_tree
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_management_team_tree
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_tree
+msgid "Apellido"
+msgstr "Apellido"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "Biografía"
+msgstr "Biografía"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "Biography"
+msgstr "Biografía"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_dancer_tree
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_tree
+msgid "Clases"
+msgstr "Clases"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "Clases totales"
+msgstr "Clases totales"
+
+#. module: dancingacademy_members
+#: model:ir.actions.act_window,name:dancingacademy_members.action_view_res_company_kanban
+#: model:ir.ui.menu,name:dancingacademy_members.academy_company_kanban_menu
+msgid "Company"
+msgstr "Compañía"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields,field_description:dancingacademy_members.field_member_dancer__bank_account
+#: model:ir.model.fields,field_description:dancingacademy_members.field_member_teacher__bank_account
+msgid "Cuenta Bancaria"
+msgstr "Cuenta bancaria"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "Cuenta bancaria"
+msgstr "Cuenta bancaria"
+
+#. module: dancingacademy_members
+#: model:ir.model,name:dancingacademy_members.model_member_dancer
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_dancer_kanban
+msgid "Dancer"
+msgstr "Bailarín"
+
+#. module: dancingacademy_members
+#: model:ir.actions.act_window,name:dancingacademy_members.action_view_dancer
+#: model:ir.ui.menu,name:dancingacademy_members.academy_dancer_menu
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_dancer_form
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_dancer_tree
+msgid "Dancers"
+msgstr "Bailarines"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields,field_description:dancingacademy_members.field_member_dancer__attached_document
+msgid "Documento Adjunto"
+msgstr "Documento Adjunto"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields.selection,name:dancingacademy_members.selection__member_dancer__payment_method__direct_debit
+msgid "Domiciliado"
+msgstr "Domiciliado"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields.selection,name:dancingacademy_members.selection__member_dancer__payment_method__cash
+msgid "Efectivo"
+msgstr "Efectivo"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_management_team_form
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_management_team_tree
+msgid "Equipo Directivo"
+msgstr "Equipo Directivo"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields,field_description:dancingacademy_members.field_member_teacher__is_user_management
+msgid "Es Management"
+msgstr "ES del equipo directivo"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields,field_description:dancingacademy_members.field_member_teacher__is_user_teacher
+msgid "Es Profesor"
+msgstr "Es profesor"
+
+#. module: dancingacademy_members
+#: model:ir.actions.act_window,name:dancingacademy_members.action_view_management_team
+#: model:ir.model,name:dancingacademy_members.model_member_management_team
+#: model:ir.ui.menu,name:dancingacademy_members.academy_management_team_menu
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_management_team_kanban
+msgid "Management Team"
+msgstr "Equipo directivo"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields,field_description:dancingacademy_members.field_member_dancer__payment_method
+msgid "Método de Pago"
+msgstr "Método de pago"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_dancer_tree
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_management_team_tree
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_tree
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields,field_description:dancingacademy_members.field_member_dancer__attached_document_name
+msgid "Nombre del Documento"
+msgstr "Nombre del Documento"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_dancer_form
+msgid "Pago"
+msgstr "Pago"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields,field_description:dancingacademy_members.field_member_teacher__sueldo
+msgid "Sueldo"
+msgstr "Sueldo"
+
+#. module: dancingacademy_members
+#: model:ir.model,name:dancingacademy_members.model_member_teacher
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_kanban
+msgid "Teacher"
+msgstr "Profesor"
+
+#. module: dancingacademy_members
+#: model:ir.actions.act_window,name:dancingacademy_members.action_view_teacher
+#: model:ir.ui.menu,name:dancingacademy_members.academy_teachers_menu
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_tree
+msgid "Teachers"
+msgstr "Profesores"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_management_team_tree
+msgid "Teléfono"
+msgstr "Teléfono"
+
+#. module: dancingacademy_members
+#: model:ir.model.fields,field_description:dancingacademy_members.field_member_dancer__total_due
+msgid "Total a Pagar"
+msgstr "Total a pagar"
+
+#. module: dancingacademy_members
+#: model:ir.actions.act_window,name:dancingacademy_members.action_view_res_users_kanban
+#: model:ir.ui.menu,name:dancingacademy_members.academy_users_kanban_menu
+#: model:ir.ui.menu,name:dancingacademy_members.academy_users_menu
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_dancer_form
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_management_team_form
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "Usuario"
+msgstr "Usuario"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "YouTube Playlist URL"
+msgstr "Lista de reproducción YouTube"
+
+#. module: dancingacademy_members
+#: model_terms:ir.ui.view,arch_db:dancingacademy_members.view_member_teacher_form
+msgid "sueldo"
+msgstr "Sueldo"

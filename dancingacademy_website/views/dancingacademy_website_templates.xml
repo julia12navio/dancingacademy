@@ -11,7 +11,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title"><t t-esc="class.name"/></h5>
                                     <p class="card-text"><t t-esc="class.teacher_id.name"/></p>
-                                    <p class="card-text">Price: <t t-esc="class.price"/> $</p>
+                                    <p class="card-text">Price: <t t-esc="class.price"/> €</p>
                                     <a t-att-href="'/classes/%s' % class.id" class="btn btn-primary">View Details</a>
                                 </div>
                             </div>

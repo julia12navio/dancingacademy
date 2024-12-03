@@ -19,87 +19,91 @@
         <field name="arch" type="xml">
             <form string="Dancing Academy Class">
                 <sheet>                
-                    <h1><field name="name"/></h1>
-                    <group>
-                        <field name= "teacher_id"/>
-                        <field name= "price"/>
+                    <h1><field name="name" attrs="{'readonly': [('is_user_management', '=', False)]}"/></h1>                    
+                    <field name="is_user_management" invisible="1"  />
+                    <group >
+                        <field name= "teacher_id" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                        <field name= "price" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                         <field name="is_user_teacher" invisible="1"/>
-                        <field name= "dancer_ids" 
+                        <field name="dancer_ids" 
                             widget="many2many_tags"
-                            attrs="{'invisible': [('is_user_teacher', '=', False)]}"
+                            attrs="{
+                                'readonly': [('is_user_teacher', '=', True), ('is_user_management', '=', False)],
+                                'invisible': [('is_user_teacher', '=', False), ('is_user_management', '=', False)]
+                            }"
                             groups="dancingacademy_base.group_academy_teacher,dancingacademy_base.group_academy_management_team"/>
-                        <field name= "total_dancers"/>
+                        <field name= "total_dancers" />
                     </group>
 
                     
                     <group>
-                        <field name="youtube_playlist_url" string="YouTube Playlist URL"/>
+                        <field name="youtube_playlist_url" string="YouTube Playlist URL" readonly="0"/>
                     </group>
                     <div id="youtube_video_gallery" style="margin-top: 20px; display: flex; overflow-x: auto; gap: 15px;"/>                
 
-                    <notebook>
+                    <notebook >
                         <page string = "Schedule">
                         
-                            <group string="Days of the Week">
+                            <group string="Days of the Week" >
                                 <div class="days-of-week-horizontal">
                                     <div class="day-item">
-                                        <field name="monday"/>
+                                        <field name="monday" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                                         <label for="monday" string="Monday"/>
                                     </div>
                                     <div class="day-item">
-                                        <field name="tuesday"/>
+                                        <field name="tuesday" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                                         <label for="tuesday" string="Tuesday"/>
                                     </div>
                                     <div class="day-item">
-                                        <field name="wednesday"/>
+                                        <field name="wednesday" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                                         <label for="wednesday" string="Wednesday"/>
                                     </div>
                                     <div class="day-item">
-                                        <field name="thursday"/>
+                                        <field name="thursday" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                                         <label for="thursday" string="Thursday"/>
                                     </div>
                                     <div class="day-item">
-                                        <field name="friday"/>
+                                        <field name="friday" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                                         <label for="friday" string="Friday"/>
                                     </div>
                                     <div class="day-item">
-                                        <field name="saturday"/>
+                                        <field name="saturday" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                                         <label for="saturday" string="Saturday"/>
                                     </div>
                                     <div class="day-item">
-                                        <field name="sunday"/>
+                                        <field name="sunday" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                                         <label for="sunday" string="Sunday"/>
                                     </div>
                                 </div>
                             </group>
                             
-                            <group string="Time Monday" attrs="{'invisible': [('monday', '=', False)]}">
-                                <field name="monday_start_time" placeholder="HH:MM"/>
-                                <field name="monday_end_time" placeholder="HH:MM"/>
+                            <group string="Time Monday" attrs="{'invisible': [('monday', '=', False)] , 'readonly': [('is_user_management', '=', False)]}">
+                                <field name="monday_start_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                                <field name="monday_end_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                             </group> 
                             <group string="Time Tuesday" attrs="{'invisible': [('tuesday', '=', False)]}">
-                                <field name="tuesday_start_time" placeholder="HH:MM"/>
-                                <field name="tuesday_end_time" placeholder="HH:MM"/>
+                                <field name="tuesday_start_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                                <field name="tuesday_end_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                             </group>                             
                             <group string="Time Wenesday" attrs="{'invisible': [('wednesday', '=', False)]}">
-                                <field name="wednesday_start_time" placeholder="HH:MM"/>
-                                <field name="wednesday_end_time" placeholder="HH:MM"/>
+                                <field name="wednesday_start_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                                <field name="wednesday_end_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                             </group>                             
                             <group string="Time Thursday" attrs="{'invisible': [('thursday', '=', False)]}">
-                                <field name="thursday_start_time"  placeholder="HH:MM"/>
-                                <field name="thursday_end_time" placeholder="HH:MM"/>
+                                <field name="thursday_start_time"  placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                                <field name="thursday_end_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                             </group>                             
                             <group string="Time Friday" attrs="{'invisible': [('friday', '=', False)]}">
-                                <field name="friday_start_time"  placeholder="HH:MM"/>
-                                <field name="friday_end_time" placeholder="HH:MM"/>
+                                <field name="friday_start_time"  placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                                <field name="friday_end_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                             </group>                             
                             <group string="Time Saturday" attrs="{'invisible': [('saturday', '=', False)]}">
-                                <field name="saturday_start_time" placeholder="HH:MM"/>
-                                <field name="saturday_end_time"  placeholder="HH:MM"/>    
+                                <field name="saturday_start_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                                <field name="saturday_end_time"  placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>    
                             </group>                             
                             <group string="Time Sunday" attrs="{'invisible': [('sunday', '=', False)]}">
-                                <field name="sunday_start_time"  placeholder="HH:MM"/>
-                                <field name="sunday_end_time" placeholder="HH:MM"/>
+                                <field name="sunday_start_time"  placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                                <field name="sunday_end_time" placeholder="HH:MM" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                             </group>     
                         </page>
                     </notebook>

@@ -1,0 +1,128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dancingacademy_attendance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-03 17:09+0000\n"
+"PO-Revision-Date: 2024-12-03 17:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dancingacademy_attendance
+#: model:ir.actions.act_window,name:dancingacademy_attendance.action_attendance_academy
+#: model:ir.ui.menu,name:dancingacademy_attendance.menu_attendance_management
+msgid "Asistencia"
+msgstr "Asistencia"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line__attended
+msgid "Asistió"
+msgstr "Asistió"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__class_id
+msgid "Clase"
+msgstr "Clase"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__create_uid
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__create_date
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: dancingacademy_attendance
+#: model:ir.model,name:dancingacademy_attendance.model_attendance_academy_line
+msgid "Detalle de Asistencia"
+msgstr "Detalle de Asistencia"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__display_name
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__date
+msgid "Fecha"
+msgstr ""
+
+#. module: dancingacademy_attendance
+#: model_terms:ir.ui.view,arch_db:dancingacademy_attendance.view_attendance_academy_form
+msgid "HH:MM"
+msgstr "HH:MM"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__time
+msgid "Hora"
+msgstr "Hora"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__id
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line__id
+msgid "ID"
+msgstr "ID"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy____last_update
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__write_uid
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__write_date
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__student_ids
+#: model_terms:ir.ui.view,arch_db:dancingacademy_attendance.view_attendance_academy_form
+msgid "Lista de Asistencia"
+msgstr "Lista de Asistencia"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__name
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line__student_name
+msgid "Nombre del Alumno"
+msgstr "Nombre del Alumno"
+
+#. module: dancingacademy_attendance
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy__teacher_id
+msgid "Profesor"
+msgstr "Profesor"
+
+#. module: dancingacademy_attendance
+#: model:ir.model,name:dancingacademy_attendance.model_attendance_academy
+#: model:ir.model.fields,field_description:dancingacademy_attendance.field_attendance_academy_line__attendance_id
+#: model_terms:ir.ui.view,arch_db:dancingacademy_attendance.view_attendance_academy_form
+msgid "Registro de Asistencia"
+msgstr "Registro de Asistencia"
+
+#. module: dancingacademy_attendance
+#: model:ir.ui.menu,name:dancingacademy_attendance.menu_attendance_academy
+#: model_terms:ir.ui.view,arch_db:dancingacademy_attendance.view_attendance_academy_tree
+msgid "Attendance record"
+msgstr "Registro de Asistencia"

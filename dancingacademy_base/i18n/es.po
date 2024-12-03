@@ -1,0 +1,346 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dancingacademy_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-03 17:18+0000\n"
+"PO-Revision-Date: 2024-12-03 17:18+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__total_students
+msgid "Alumnos Totales"
+msgstr "Cantidad de alumnos"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__biography
+msgid "Biography"
+msgstr "Biografía"
+
+#. module: dancingacademy_base
+#: model:ir.model,name:dancingacademy_base.model_calendar_event
+msgid "Calendar Event"
+msgstr "Evento de calendario"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__class_ids
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__class_ids
+msgid "Clases"
+msgstr "Clases"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__total_classes
+msgid "Clases Totales"
+msgstr "Cantidad de clases"
+
+#. module: dancingacademy_base
+#: model:ir.model,name:dancingacademy_base.model_dancingacademy_class
+#: model:ir.model.fields,field_description:dancingacademy_base.field_calendar_event__class_id
+msgid "Class"
+msgstr "Clase"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__comments
+msgid "Comments"
+msgstr "Comentario"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__create_uid
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__create_uid
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__create_uid
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__create_date
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__create_date
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__create_date
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: dancingacademy_base
+#: model:ir.model,name:dancingacademy_base.model_member_dancer
+#: model:res.groups,name:dancingacademy_base.group_academy_dancer
+msgid "Dancer"
+msgstr "Bailarín"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__dancer_ids
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__student_ids
+msgid "Dancers"
+msgstr "Bailarines"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__display_name
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__display_name
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__display_name
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__email
+msgid "Email"
+msgstr "Email"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__friday
+msgid "Friday"
+msgstr "Viernes"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__friday_end_time
+msgid "Friday End Time"
+msgstr "Viernes hora de salida"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__friday_start_time
+msgid "Friday Start Time"
+msgstr "Viernes hora de incio"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__id
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__id
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__id
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__id
+msgid "ID"
+msgstr "ID"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__image
+msgid "Image"
+msgstr "Foto"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__is_user_teacher
+msgid "Is Current User Teacher"
+msgstr "ES el actual usuario profesor"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__is_user_dancer
+msgid "Is User Dancer"
+msgstr "ES usuario Bailarín"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class____last_update
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer____last_update
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team____last_update
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher____last_update
+msgid "Last Modified on"
+msgstr "Ültima modificación en"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__last_name
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__last_name
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__last_name
+msgid "Last Name"
+msgstr "Apellido"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__write_uid
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__write_uid
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__write_uid
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__write_date
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__write_date
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__write_date
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__location
+msgid "Location"
+msgstr "Dirección"
+
+#. module: dancingacademy_base
+#: model:ir.model,name:dancingacademy_base.model_member_management_team
+#: model:res.groups,name:dancingacademy_base.group_academy_management_team
+msgid "Management Team"
+msgstr "Equipo directivo"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__monday
+msgid "Monday"
+msgstr "Lunes"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__monday_end_time
+msgid "Monday End Time"
+msgstr "Lunes hora de salida"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__monday_start_time
+msgid "Monday Start Time"
+msgstr "Lunes hora de inicio"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__name
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__name
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__name
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__phone
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__phone
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__price
+msgid "Price"
+msgstr "Precio"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__saturday
+msgid "Saturday"
+msgstr "Sábado"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__saturday_end_time
+msgid "Saturday End Time"
+msgstr "Sábado hora de salida"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__saturday_start_time
+msgid "Saturday Start Time"
+msgstr "Sábado hora de inicio"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__schedule_ids
+msgid "Schedules"
+msgstr "Horario"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__sunday
+msgid "Sunday"
+msgstr "Domingo"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__sunday_end_time
+msgid "Sunday End Time"
+msgstr "Domingo hora de salida"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__sunday_start_time
+msgid "Sunday Start Time"
+msgstr "Domingo hora de incio"
+
+#. module: dancingacademy_base
+#: model:ir.model,name:dancingacademy_base.model_member_teacher
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__teacher_id
+#: model:res.groups,name:dancingacademy_base.group_academy_teacher
+msgid "Teacher"
+msgstr "Profesor"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__teacher_ids
+msgid "Teachers"
+msgstr "Profesores"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__thursday
+msgid "Thursday"
+msgstr "Jueves"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__thursday_end_time
+msgid "Thursday End Time"
+msgstr "Jueves hora de salida"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__thursday_start_time
+msgid "Thursday Start Time"
+msgstr "Jueves hora de inicio"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__total_dancers
+msgid "Total Dancers"
+msgstr "Bailarines totales"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__tuesday
+msgid "Tuesday"
+msgstr "Martes"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__tuesday_end_time
+msgid "Tuesday End Time"
+msgstr "Martes hora de salida"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__tuesday_start_time
+msgid "Tuesday Start Time"
+msgstr "Martes hora de inicio"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__user_id
+msgid "User"
+msgstr "Usuario"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,help:dancingacademy_base.field_member_management_team__user_id
+msgid "User asociated with management team"
+msgstr "Usuario asociado con equipo directivo"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,help:dancingacademy_base.field_member_teacher__user_id
+msgid "User asociates with teacher"
+msgstr "Usuario asociado con profesor"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,help:dancingacademy_base.field_member_dancer__user_id
+msgid "User associated with Teacher"
+msgstr "Usuario asociado con profesor"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__wednesday
+msgid "Wednesday"
+msgstr "Miércoles"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__wednesday_end_time
+msgid "Wednesday End Time"
+msgstr "Miércoles hora de salida"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_dancingacademy_class__wednesday_start_time
+msgid "Wednesday Start Time"
+msgstr "Miércoles hora de inicio"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__youtube_playlist_url
+msgid "YouTube Playlist URL"
+msgstr "Lista de resproducción YouTube"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_teacher__image
+msgid "photo"
+msgstr "Foto"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__image
+msgid "photos"
+msgstr "Fotos"
+
+#. module: dancingacademy_base
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_dancer__user_id
+#: model:ir.model.fields,field_description:dancingacademy_base.field_member_management_team__user_id
+msgid "user"
+msgstr "Usuario"

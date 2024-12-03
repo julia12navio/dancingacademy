@@ -19,7 +19,7 @@
         <field name="name">attendance.academy.form</field>
         <field name="model">attendance.academy</field>
         <field name="arch" type="xml">
-            <form string="Registro de Asistencia">
+            <form string="Attendance record">
                 <sheet>
                     <group>
                         <field name="date"/>

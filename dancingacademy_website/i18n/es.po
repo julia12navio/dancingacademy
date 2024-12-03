@@ -1,0 +1,82 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* dancingacademy_website
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-03 17:43+0000\n"
+"PO-Revision-Date: 2024-12-03 17:43+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "<strong>Friday:</strong>"
+msgstr "<strong>Viernes:</strong>"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "<strong>Monday:</strong>"
+msgstr "<strong>Lunes:</strong>"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "<strong>Price:</strong>"
+msgstr "<strong>Precio:</strong>"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "<strong>Saturday:</strong>"
+msgstr "<strong>Sábado:</strong>"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "<strong>Sunday:</strong>"
+msgstr "<strong>Domingo:</strong>"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "<strong>Teacher:</strong>"
+msgstr "<strong>Profesor:</strong>"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "<strong>Thursday:</strong>"
+msgstr "<strong>Jueves:</strong>"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "<strong>Tuesday:</strong>"
+msgstr "<strong>Martes:</strong>"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "<strong>Wednesday:</strong>"
+msgstr "<strong>Miércoles:</strong>"
+
+#. module: dancingacademy_website
+#: model:website.menu,name:dancingacademy_website.website_menu_classes
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.classes_list_template
+msgid "Classes"
+msgstr "Clases"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.classes_list_template
+msgid "Price:"
+msgstr "Precio:"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.class_detail_template
+msgid "Schedule"
+msgstr "Horario"
+
+#. module: dancingacademy_website
+#: model_terms:ir.ui.view,arch_db:dancingacademy_website.classes_list_template
+msgid "View Details"
+msgstr "Detalles"

@@ -3,13 +3,13 @@ from datetime import datetime
 
 class AttendanceAcademy(models.Model):
     _name = 'attendance.academy'
-    _description = 'Registro de Asistencia'
+    _description = 'Attendance record'
 
     name = fields.Char(string="Nombre", compute="_compute_name", store=True)
     date = fields.Date(string="Fecha", required=True, default=fields.Date.context_today)
     time = fields.Char(string="Hora", required=True)
     class_id = fields.Many2one('dancingacademy.class', string="Clase", required=True)
-    teacher_id = fields.Many2one('member.teacher', string="Profesor", required=True)
+    teacher_id = fields.Many2one('member.teacher', string="Teacher", required=True)
     student_ids = fields.One2many('attendance.academy.line', 'attendance_id', string="Lista de Asistencia")
 
     @api.depends('class_id', 'date', 'time')
