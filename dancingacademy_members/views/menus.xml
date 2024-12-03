@@ -1,6 +1,6 @@
 <odoo>
     <!-- Menú principal Academia -->
-    <menuitem id="academy_members_menu" name="Academy Members" sequence="1"/>
+    <menuitem id="academy_members_menu" name="Academy Members" sequence="3"/>
 
     <!-- Acción para ver los miembros de Equipo directivo -->
     <record id="dancingacademy_members.action_view_management_team" model="ir.actions.act_window">

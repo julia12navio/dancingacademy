@@ -38,8 +38,9 @@
                     <field name="class_ids" widget="many2many_tags"/>
                     <field name="teacher_ids" widget="many2many_tags"/>
                     <field name="comments" />
+                    <field name="is_teacher" invisible="1"/>
                 </group>
-                <group string="Pago">
+                <group string="Pago" attrs="{'invisible': [('is_teacher', '=', True)]}">
                     <field name="total_due" readonly="1"/>
                     <field name="payment_method"/>
                     <field name="bank_account" attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}"/>

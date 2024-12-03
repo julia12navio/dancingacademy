@@ -6,8 +6,14 @@ class MemberTeacher(models.Model):
     sueldo = fields.Float()    
     bank_account = fields.Char(string="Cuenta Bancaria")
     
-    is_user_teacher = fields.Boolean(string="Es Profesor", compute="_compute_is_user_teacher")
+    is_user_teacher = fields.Boolean(string="Es el mismo usuario Profesor", compute="_compute_is_user_teacher")
     is_user_management = fields.Boolean(string="Es Management", compute="_compute_is_user_management")
+    is_teacher = fields.Boolean(string="Es Profesor", compute="_compute_is_teacher")
+
+    @api.depends('user_id')
+    def _compute_is_teacher(self):
+        for record in self:
+            record.is_user_teacher = self.env.user.has_group('dancingacademy_base.group_academy_teacher')
 
     @api.depends('user_id')
     def _compute_is_user_teacher(self):

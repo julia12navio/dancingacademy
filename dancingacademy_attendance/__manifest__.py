@@ -1,5 +1,5 @@
 {
-    'name': 'Dancing Academy Gestión de Asistencia',
+    'name': 'Asistencia Dancing Academy',
     'version': '1.0',
     'summary': 'Módulo para gestionar la asistencia de clases',
     'description': """

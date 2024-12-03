@@ -1,5 +1,5 @@
 {
-    'name': 'Dancing Academy Gestión de Mensualidades',
+    'name': 'Mensualidades Dancing Academy',
     'version': '1.0',
     'summary': 'Gestión de mensualidades y costes mensuales en la escuela',
     'author': 'Julia Navío',

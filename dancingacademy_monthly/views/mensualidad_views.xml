@@ -58,6 +58,6 @@
     </record>
 
     <!-- Menú -->
-    <menuitem id="menu_school" name="Mensualidad" sequence="1"/>
+    <menuitem id="menu_school" name="Mensualidad" sequence="4"/>
     <menuitem id="menu_monthly_academy" name="Mensualidades" parent="menu_school" action="action_monthly_academy" sequence="1"/>
 </odoo>

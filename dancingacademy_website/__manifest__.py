@@ -1,5 +1,5 @@
 {
-    'name': 'Dancing Academy Website',
+    'name': 'Website Dancing Academy',
     'version': '1.0',
     'summary': 'Website integration for Dancing Academy classes',
     'author': 'Julia Navío',

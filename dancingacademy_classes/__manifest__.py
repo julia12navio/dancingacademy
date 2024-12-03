@@ -1,5 +1,5 @@
 {
-    'name': 'Dancing Academy Classes',
+    'name': 'Clases Dancing Academy',
     'version': '1.0',
     'depends': ['web','dancingacademy_base'],
     'data': [
