@@ -71,7 +71,7 @@ odoo.define('dancingacademy_classes', function (require) {
 
         // Obtiene los videos de la lista de reproducción desde la API de YouTube
         async function fetchYouTubeVideos(playlistId, videoGallery) {
-            const apiKey = "AIzaSyBGzOTSs-XKVm-cAWzrnU_Zo0vg7L-n33w"; // Reemplaza con tu clave de API de YouTube
+            const apiKey = "AIzaSyBGzOTSs-XKVm-cAWzrnU_Zo0vg7L-n33w"; //Clave de API de YouTube
             const url = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=10&playlistId=${playlistId}&key=${apiKey}`;
 
             try {
