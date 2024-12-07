@@ -62,6 +62,9 @@
                 <field name="last_name" string="Apellido"/>
                 <field name="class_ids" string="Clases" widget="many2many_tags"/>
             </tree>
+            <header>
+            <button name="generar_sepa_xml" type="object" string="Generar SEPA XML" class="btn-primary" />
+        </header>
         </field>
     </record>
 

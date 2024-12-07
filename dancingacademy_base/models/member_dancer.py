@@ -13,6 +13,9 @@ class MemberDancer(models.Model):
     image = fields.Binary(string="photos")
     user_id = fields.Many2one('res.users', string="user", required=True, ondelete="cascade", help="User associated with Teacher")
 
+    mandate_reference = fields.Char(string="Referencia de Mandato")
+    mandate_date = fields.Date(string="Fecha de Firma del Mandato")
+
     @api.onchange('class_ids')
     def _onchange_class_ids(self):
         """Update related models when class_ids changes."""

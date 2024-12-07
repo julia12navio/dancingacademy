@@ -114,7 +114,7 @@ msgstr "Nombre"
 #. module: dancingacademy_monthly
 #: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__name
 msgid "Nombre del Coste"
-msgstr "NOmbre del Coste"
+msgstr "Nombre del Coste"
 
 #. module: dancingacademy_monthly
 #: model:ir.model.fields,field_description:dancingacademy_monthly.field_monthly_costs_academy__price
