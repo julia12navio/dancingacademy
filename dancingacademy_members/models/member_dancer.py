@@ -1,6 +1,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import UserError
 import base64
+from datetime import date
 
 class MemberDancer(models.Model):
     _inherit = 'member.dancer'
@@ -13,6 +14,11 @@ class MemberDancer(models.Model):
     bank_account = fields.Char(string="Cuenta Bancaria")
     attached_document = fields.Binary(string="Documento Adjunto")
     attached_document_name = fields.Char(string="Nombre del Documento")
+    payment_status = fields.Selection([
+        ('unpaid', 'No pagado'),
+        ('paid', 'Pagado')
+        ], string="Estado de Pago", default='unpaid')
+
 
     is_user_management = fields.Boolean(string="Es Management", compute="_compute_is_user_management")
 
@@ -20,6 +26,17 @@ class MemberDancer(models.Model):
     def _compute_is_user_management(self):
         for record in self:
             record.is_user_management = self.env.user.has_group('dancingacademy_base.group_academy_management_team')
+
+    @api.model
+    def update_payment_status(self):
+        """Actualizar el estado de pago cada 1 de cada mes."""
+        # Alumnos con método de pago domiciliado: se marcan como pagados automáticamente.
+        domiciliados = self.search([('payment_method', '=', 'direct_debit')])
+        domiciliados.write({'payment_status': 'paid'})
+
+        # Alumnos con método de pago en efectivo: se marcan como no pagados.
+        no_domiciliados = self.search([('payment_method', '=', 'cash')])
+        no_domiciliados.write({'payment_status': 'unpaid'})
 
 
     @api.depends('class_ids.price', 'class_ids')
@@ -30,7 +47,7 @@ class MemberDancer(models.Model):
             dancer.total_due = total
 
 
-    def generar_sepa_xml(self):
+    def generar_alumnos_xml(self):
         # Filtrar los registros con método de pago 'direct_debit'
         alumnos_domiciliados = self.filtered(lambda r: r.payment_method == 'direct_debit')
 
@@ -44,7 +61,7 @@ class MemberDancer(models.Model):
 
         # Cabecera
         xml_content += '    <GrpHdr>\n'
-        xml_content += '      <MsgId>SEPA_BATCH</MsgId>\n'
+        xml_content += '      <MsgId>{datetime.now().strftime("%Y%m%d%H%M%S")}</MsgId>\n'
         xml_content += f'      <CreDtTm>{fields.Datetime.now()}</CreDtTm>\n'
         xml_content += f'      <NbOfTxs>{len(alumnos_domiciliados)}</NbOfTxs>\n'
         xml_content += f'      <CtrlSum>{sum(record.total_due for record in alumnos_domiciliados):.2f}</CtrlSum>\n'
@@ -88,7 +105,7 @@ class MemberDancer(models.Model):
 
         # Crear un adjunto en Odoo
         attachment = self.env['ir.attachment'].create({
-            'name': 'SEPA_DirectDebit.xml',
+            'name': 'Alumnos_Domiciliados.xml',
             'type': 'binary',
             'datas': base64.b64encode(xml_content.encode('utf-8')).decode('utf-8'),
             'mimetype': 'application/xml',

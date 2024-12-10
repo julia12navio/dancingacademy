@@ -1,0 +1,12 @@
+<odoo>
+        <record id="ir_cron_update_payment_status" model="ir.cron">
+            <field name="name">Actualizar Estado de Pago</field>
+            <field name="model_id" ref="dancingacademy_members.model_member_dancer"/>
+            <field name="state">code</field>
+            <field name="code">model.update_payment_status()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="numbercall">-1</field>
+            <field name="nextcall" eval="(DateTime.now().replace(day=1) + relativedelta(months=1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        </record>
+</odoo>

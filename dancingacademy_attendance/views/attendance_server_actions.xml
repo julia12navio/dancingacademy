@@ -1,0 +1,13 @@
+<odoo>
+    <!-- Acción de servidor para exportar asistencias -->
+    <record id="action_server_export_attendance" model="ir.actions.server">
+        <field name="name">Exportar informe alumnos asistencias</field>
+        <field name="model_id" ref="model_attendance_academy"/> <!-- Modelo vinculado -->
+        <field name="binding_model_id" ref="model_attendance_academy"/> <!-- Modelo para que aparezca en el menú -->
+        <field name="binding_type">action</field> <!-- Define que es una acción de servidor -->
+        <field name="state">code</field> <!-- Indica que el código será ejecutado directamente -->
+        <field name="code">
+action = env['attendance.academy'].browse(env.context.get('active_ids')).export_attendance_to_excel()
+        </field>
+    </record>
+</odoo>

@@ -10,7 +10,8 @@
         'views/member_dancer_views.xml',
         'views/member_teacher_views.xml',
         'views/members_management_team_views.xml',
-        'views/user_views.xml'
+        'views/user_views.xml',
+        'data/cron.xml'
     ],
     'application': True,
     'installable': True,

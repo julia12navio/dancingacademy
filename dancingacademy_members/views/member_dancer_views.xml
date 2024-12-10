@@ -29,6 +29,7 @@
         <field name="model">member.dancer</field>
         <field name="arch" type="xml">
             <form string="Dancers">
+                <field name="payment_status" widget="statusbar" options="{'clickable': '1'}"/>
             <sheet>         
                 <field name="image" widget="image" class="oe_avatar" />
                 <h1><field name="name" /></h1>
@@ -40,13 +41,18 @@
                     <field name="comments" />
                     <field name="is_user_management" invisible="1"/>
                 </group>
-                <group string="Pago" attrs="{'invisible': [('is_user_management', '=', False)]}">
-                    <field name="total_due" readonly="1"/>
-                    <field name="payment_method"/>
-                    <field name="bank_account" attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}"/>
-                    <field name="attached_document" widget="binary" 
-                        attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}"/>
-                    <field name="attached_document_name" invisible="1"/>
+                <group string="Pago" >
+                    <label for="total_due" string="Total a Pagar:"/>
+                    <field name="total_due" readonly="1" string="Total a pagar"/>
+                    <label for="payment_method" string="Método de pago:"/>
+                    <field name="payment_method" string="Método de pago"/>
+                    <group attrs="{'invisible': [('is_user_management', '=', False)]}">
+                        <field name="bank_account" attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}"
+                        string="Cuenta bancaria"/>
+                        <field name="attached_document" widget="binary" 
+                            attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}"/>
+                        <field name="attached_document_name" invisible="1"/>
+                    </group>
                 </group>
             </sheet>
             </form>
@@ -63,8 +69,22 @@
                 <field name="class_ids" string="Clases" widget="many2many_tags"/>
             </tree>
             <header>
-            <button name="generar_sepa_xml" type="object" string="Generar SEPA XML" class="btn-primary" />
+            <button name="generar_alumnos_xml" type="object" string="EXPORTAR XML ALUMNOS DOMICILIADOS" class="btn-primary" />
         </header>
+        </field>
+    </record>
+
+
+    <record id="view_member_dancer_search" model="ir.ui.view">
+        <field name="name">member.dancer.search</field>
+        <field name="model">member.dancer</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="payment_status"/>
+                <group expand="1" string="Group By">
+                    <filter string="Estado de Pago" name="group_by_payment_status" context="{'group_by': 'payment_status'}"/>
+                </group>
+            </search>
         </field>
     </record>
 

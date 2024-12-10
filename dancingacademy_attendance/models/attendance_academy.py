@@ -1,5 +1,8 @@
+import base64
+import io
+import xlsxwriter
 from odoo import models, fields, api
-from datetime import datetime
+from odoo.exceptions import UserError
 
 class AttendanceAcademy(models.Model):
     _name = 'attendance.academy'
@@ -30,3 +33,49 @@ class AttendanceAcademy(models.Model):
                     'attendance_id': self.id,
                     'student_name': student.name,
                 })
+            
+    def export_attendance_to_excel(self):
+        if not self:
+            raise UserError("No se han seleccionado registros para exportar.")
+
+        # Crear un buffer para el archivo Excel
+        output = io.BytesIO()
+        workbook = xlsxwriter.Workbook(output, {'in_memory': True})
+        sheet = workbook.add_worksheet('Informe de Asistencias')
+
+        # Encabezados
+        headers = ['Alumno', 'Clase', 'Fecha', 'Hora', 'Asistió']
+        for col_num, header in enumerate(headers):
+            sheet.write(0, col_num, header)
+
+        # Rellenar filas con los datos seleccionados
+        row = 1
+        for record in self:
+            for line in record.student_ids:
+                sheet.write(row, 0, line.student_name)
+                sheet.write(row, 1, record.class_id.name)
+                sheet.write(row, 2, record.date.strftime('%d/%m/%Y'))
+                sheet.write(row, 3, record.time)
+                sheet.write(row, 4, 'Sí' if line.attended else 'No')
+                row += 1
+
+        # Cerrar el archivo Excel
+        workbook.close()
+        output.seek(0)
+
+        # Crear un adjunto en Odoo
+        attachment = self.env['ir.attachment'].create({
+            'name': 'Informe_Asistencias.xlsx',
+            'type': 'binary',
+            'datas': base64.b64encode(output.read()).decode('utf-8'),
+            'mimetype': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        })
+
+        output.close()
+
+        # Descargar el archivo Excel
+        return {
+            'type': 'ir.actions.act_url',
+            'url': f'/web/content/{attachment.id}?download=true',
+            'target': 'self',
+        }

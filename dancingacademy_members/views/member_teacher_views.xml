@@ -73,16 +73,27 @@
                         <field name="biography" string="Biografía" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                     </page>
                     <!-- Página Sueldo -->
-                    <page name="Sueldo"
+                    <page name="Facturas"
                         attrs="{'invisible': [('is_user_teacher', '=', False), ('is_user_management', '=', False)]}">
-                        <div>
-                            <label for="sueldo" string="sueldo"/><span>: </span>
-                            <field name="sueldo" attrs="{'readonly': [('is_user_management', '=', False)]}"/><span>€</span>
-                        </div>
                         <div>
                             <label for="bank_account" string="Cuenta bancaria"/><span>: </span>
                             <field name="bank_account" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                            <br/>
+                            <label for="dni" string="DNI: "/>
+                            <field name="dni"  attrs="{'readonly': [('is_user_management', '=', False)]}" />
                         </div>
+                        <group>
+                            <field name="invoice_lines">
+                            <tree editable="bottom">
+                                <field name="date"/>
+                                <field name="date_to_pay"/>
+                                <field name="name"/>
+                                <field name="price"/>
+                                <field name="pdf_invoice" widget="binary"/>
+                                <field name="is_paid"/>
+                            </tree>
+                            </field>
+                        </group>
                     </page>
                 </notebook>
             </sheet>
@@ -99,6 +110,9 @@
                 <field name="last_name" string="Apellido"/>
                 <field name="class_ids" string="Clases" widget="many2many_tags"/>
             </tree>
+            <header>
+                <button name="generar_facturas_xml" type="object" string="Exportar Facturas XML" class="btn-primary" />
+            </header>
         </field>
     </record>
 

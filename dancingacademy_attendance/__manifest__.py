@@ -12,6 +12,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/attendance_views.xml',
+        'views/attendance_server_actions.xml'
     ],
     'installable': True,
     'application': True,

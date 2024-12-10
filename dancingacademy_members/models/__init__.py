@@ -2,4 +2,4 @@
 
 from . import member_dancer
 from . import member_teacher
-from . import res_company
+from . import invoice_line
