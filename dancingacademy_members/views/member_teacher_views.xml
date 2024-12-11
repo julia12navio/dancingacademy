@@ -111,7 +111,8 @@
                 <field name="class_ids" string="Clases" widget="many2many_tags"/>
             </tree>
             <header>
-                <button name="generar_facturas_xml" type="object" string="Exportar Facturas XML" class="btn-primary" />
+                <button name="generar_facturas_xml" type="object" string="Exportar Facturas XML" class="btn-primary" 
+                groups="dancingacademy_base.group_academy_management_team"/>
             </header>
         </field>
     </record>

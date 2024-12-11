@@ -2,7 +2,7 @@
 {
     'name': ' Members Dancing Academy',
     'version': '1.0',
-    'depends': ['dancingacademy_base','payment', 'base'],
+    'depends': ['dancingacademy_base','payment', 'base','account','product'],
     'data': [
         'security/ir.model.access.csv',
         'security/ir_rule.xml',

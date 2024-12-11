@@ -35,32 +35,41 @@
                 <h1><field name="name" /></h1>
                 <group>
                     <field name="last_name" />
+                    <field name="address"/>
                     <field name="user_id" string="Usuario"/>
                     <field name="class_ids" widget="many2many_tags"/>
                     <field name="teacher_ids" widget="many2many_tags"/>
                     <field name="comments" />
                     <field name="is_user_management" invisible="1"/>
                 </group>
-                <group string="Pago" >
-                    <label for="total_due" string="Total a Pagar:"/>
-                    <field name="total_due" readonly="1" string="Total a pagar"/>
-                    <label for="payment_method" string="Método de pago:"/>
-                    <field name="payment_method" string="Método de pago"/>
-                    <group attrs="{'invisible': [('is_user_management', '=', False)]}">
-                        <field name="bank_account" attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}"
-                        string="Cuenta bancaria"/>
-                        <field name="attached_document" widget="binary" 
-                            attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}"/>
-                        <field name="attached_document_name" invisible="1"/>
-                    </group>
-                </group>
+                    <notebook>
+                        <page string="Pago">
+                            <group string="Pago">
+                                <label for="total_due" string="Total a Pagar:"/>
+                                <field name="total_due" readonly="1" string="Total a pagar"/>
+                                <label for="payment_method" string="Método de pago:"/>
+                                <field name="payment_method" string="Método de pago"/>
+                                <group attrs="{'invisible': [('is_user_management', '=', False)]}">
+                                    <field name="bank_account" attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}" string="Cuenta bancaria"/>
+                                    <field  name="bic" attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}" string="BIC"/>
+                                    <field name="mandate_reference" attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}" string="Referencia de SEPA"/>
+                                    <field name="mandate_date" attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}" string="Fecha de SEPA"/>
+                                    <field name="attached_document" widget="binary" attrs="{'invisible': [('payment_method', '!=', 'direct_debit')]}"/>
+                                    <field name="attached_document_name" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Facturas" attrs="{'invisible': [('is_user_management', '=', False)]}">
+                        <field name="invoice_ids" />
+                        </page>
+                    </notebook>
             </sheet>
             </form>
         </field>
     </record>
 
-        <record id="view_member_dancer_tree" model="ir.ui.view">
-        <field name="name">.member.dancer.tree</field>
+    <record id="view_member_dancer_tree" model="ir.ui.view">
+        <field name="name">member.dancer.tree</field>
         <field name="model">member.dancer</field>
         <field name="arch" type="xml">
             <tree string="Dancers">
@@ -69,8 +78,14 @@
                 <field name="class_ids" string="Clases" widget="many2many_tags"/>
             </tree>
             <header>
-            <button name="generar_alumnos_xml" type="object" string="EXPORTAR XML ALUMNOS DOMICILIADOS" class="btn-primary" />
-        </header>
+                <!-- Botón de Exportar XML -->
+                <button name="generate_sepa_xml" type="object" string="EXPORTAR XML ALUMNOS DOMICILIADOS" class="btn-primary"
+                    groups="dancingacademy_base.group_academy_management_team" />
+
+                <!-- Botón de Generar Facturas -->
+                <button name="generate_monthly_invoices" type="object" string="GENERAR FACTURAS" class="btn-primary"
+                    groups="dancingacademy_base.group_academy_management_team" />
+            </header>
         </field>
     </record>
 
@@ -83,6 +98,7 @@
                 <field name="payment_status"/>
                 <group expand="1" string="Group By">
                     <filter string="Estado de Pago" name="group_by_payment_status" context="{'group_by': 'payment_status'}"/>
+                    <filter string="Método de Pago" name="group_by_payment_method" context="{'group_by': 'payment_method'}"/>
                 </group>
             </search>
         </field>
