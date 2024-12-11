@@ -76,11 +76,17 @@
                     <page name="Facturas"
                         attrs="{'invisible': [('is_user_teacher', '=', False), ('is_user_management', '=', False)]}">
                         <div>
+                            <label for="address" string="Dirección: " />
+                            <field name="address" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
+                            <br />
                             <label for="bank_account" string="Cuenta bancaria"/><span>: </span>
                             <field name="bank_account" attrs="{'readonly': [('is_user_management', '=', False)]}"/>
                             <br/>
                             <label for="dni" string="DNI: "/>
                             <field name="dni"  attrs="{'readonly': [('is_user_management', '=', False)]}" />
+                            <br/>
+                            <label for="bic" string=" BIC: "/>
+                            <field  name="bic" attrs="{'readonly': [('is_user_management', '=', False)]}" string="BIC"/>
                         </div>
                         <group>
                             <field name="invoice_lines">
@@ -111,7 +117,7 @@
                 <field name="class_ids" string="Clases" widget="many2many_tags"/>
             </tree>
             <header>
-                <button name="generar_facturas_xml" type="object" string="Exportar Facturas XML" class="btn-primary" 
+                <button name="generate_teacher_payments_xml" type="object" string="Exportar Facturas XML" class="btn-primary" 
                 groups="dancingacademy_base.group_academy_management_team"/>
             </header>
         </field>

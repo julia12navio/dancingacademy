@@ -1,6 +1,7 @@
 {
     'name': 'Clases Dancing Academy',
     'version': '1.0',
+    'summary': 'Módulo para gestionar las clases de una academia',
     'depends': ['web','dancingacademy_base'],
     'data': [
         'views/class_views.xml', 

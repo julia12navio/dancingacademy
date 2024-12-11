@@ -122,6 +122,7 @@ class MemberDancer(models.Model):
         if not company_bank:
             raise UserError('La cuenta bancaria de la compañía no está configurada.')
         company_iban = company_bank.acc_number
+        company_bic = company_bank.bank_id.bic
 
         # Cabecera XML
         xml_content = '<?xml version="1.0" encoding="utf-8"?>\n'
@@ -167,13 +168,13 @@ class MemberDancer(models.Model):
         xml_content += '      </Dbtr>\n'
         xml_content += '      <DbtrAcct>\n'
         xml_content += '        <Id>\n'
-        xml_content += f'          <IBAN>{company_bank}</IBAN>\n'
+        xml_content += f'          <IBAN>{company_iban}</IBAN>\n'
         xml_content += '        </Id>\n'
         xml_content += '        <Ccy>EUR</Ccy>\n'
         xml_content += '      </DbtrAcct>\n'
         xml_content += '      <DbtrAgt>\n'
         xml_content += '        <FinInstnId>\n'
-        xml_content += f'          <BIC>{dancer.bic}</BIC>\n'
+        xml_content += f'          <BIC>{company_bic}</BIC>\n'
         xml_content += '        </FinInstnId>\n'
         xml_content += '      </DbtrAgt>\n'
         xml_content += '      <ChrgBr>SLEV</ChrgBr>\n'

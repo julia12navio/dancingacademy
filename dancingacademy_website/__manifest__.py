@@ -1,7 +1,7 @@
 {
     'name': 'Website Dancing Academy',
     'version': '1.0',
-    'summary': 'Website integration for Dancing Academy classes',
+    'summary': 'Módulo para integrar las clases en el sitio web.',
     'author': 'Julia Navío',
     'depends': ['base', 'website', 'dancingacademy_classes'], 
     'data': [

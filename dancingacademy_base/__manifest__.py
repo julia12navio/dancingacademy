@@ -2,6 +2,7 @@
 {
     'name': 'Base Dancing Academy',
     'version': '1.0',
+    'summary': 'Módulo base para Dancing Academy',
     'depends': ['base', 'calendar'],
     'data': [
         'security/security_groups.xml',

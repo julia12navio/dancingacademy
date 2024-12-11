@@ -2,6 +2,7 @@
 {
     'name': ' Members Dancing Academy',
     'version': '1.0',
+    'summary': 'Módulo para gestionar los miembros de una academia',
     'depends': ['dancingacademy_base','payment', 'base','account','product'],
     'data': [
         'security/ir.model.access.csv',
