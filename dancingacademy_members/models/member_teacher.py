@@ -6,7 +6,7 @@ from datetime import datetime
 class MemberTeacher(models.Model):
     _inherit = 'member.teacher'
 
-    sueldo = fields.Float()    
+    sueldo = fields.Float(compute="_compute_sueldo")    
     bank_account = fields.Char(string="Cuenta Bancaria")
     dni = fields.Char(string="DNI")
     address = fields.Char(string="Dirección")   
@@ -17,6 +17,14 @@ class MemberTeacher(models.Model):
     bic = fields.Char(string="Dirección")
 
     invoice_lines = fields.One2many('invoice.line', 'teacher_id', string="Líneas de Facturas")
+    
+    @api.depends('invoice_lines')
+    def _compute_sueldo(self):
+        for record in self:
+            price = self.invoice_lines[0].price
+            if price:
+                self.sueldo = price
+
 
     @api.depends('user_id')
     def _compute_is_teacher(self):

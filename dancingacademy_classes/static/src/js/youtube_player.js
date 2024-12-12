@@ -137,7 +137,7 @@ odoo.define('dancingacademy_classes', function (require) {
         const observer = new MutationObserver((mutationsList) => {
             mutationsList.forEach((mutation) => {
                 if (mutation.addedNodes.length > 0) {
-                    const content = document.querySelector('.o_form_view'); // Cambia este selector si es necesario
+                    const content = document.querySelector('.o_form_view'); 
                     if (content && content !== currentView) {
                         console.log("Cambio de vista detectado, inicializando lógica...");
                         currentView = content; // Actualizamos la vista actual
