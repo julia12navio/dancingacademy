@@ -1,4 +1,4 @@
-# DancingAcademy
+# ERP Dancing Academy
 
 **Proyecto final de ciclo del Grado Superior de Desarrollo de Aplicaciones Multiplataforma (DAM).**
 
