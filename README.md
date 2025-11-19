@@ -1,14 +1,28 @@
-# ERP Dancing Academy
+# ERP Dancing Academy 🩰
 
-**Proyecto final de ciclo del Grado Superior de Desarrollo de Aplicaciones Multiplataforma (DAM).**
+**Sistema ERP para la gestión integral de academias de baile. 💃🕺**
+
+Este ERP está desarrollado como un conjunto de módulos personalizados para Odoo 16, permitiendo gestionar alumnos, clases, mensualidades, asistencias, contenidos multimedia y página web. 
 
 ---
+
+# Tecnologías
+![Odoo](https://img.shields.io/badge/Odoo16-%238511FA.svg?style=for-the-badge&logo=odoo&logoColor=white)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![XML](https://img.shields.io/badge/xml-%231572B6.svg?style=for-the-badge)
+![PostgreSQl](https://img.shields.io/badge/postgresql-FF6C37?style=for-the-badge&logo=postgresql&logoColor=white)
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-yellow.svg?style=for-the-badge&logo=javascript&logoColor=white)
+![AWS EC2](https://img.shields.io/badge/AWS%20EC2-orange.svg?style=for-the-badge&logo=amazon&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) 
+![Ubuntu](https://img.shields.io/badge/Ubuntu%20Server-orange.svg?style=for-the-badge&logo=ubuntu&logoColor=white) 
+
 
 # Instrucciones para Descargar el Proyecto
 
 Este proyecto estará disponible siempre que el servidor alojado en AWS esté activado. Sin embargo, si se desea instalar el repositorio de **DancingAcademy**, deberán seguirse los siguientes pasos.
 
-Repositorio en GitHub: [https://github.com/julia12navio/dancingacademy](https://github.com/julia12navio/dancingacademy)
 
 ## Requisitos Previos
 1. Tener **Odoo** instalado.
